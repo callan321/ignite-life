@@ -98,13 +98,9 @@ export default function Footer() {
                                                 <span className="text-sm/6 text-gray-700">{item.day}: {item.hours}</span>
                                             </li>
                                         ))}
-
                                     </ul>
                                 </div>
                             </div>
-                            <a href={googlemapsurl}
-                               className='text-blue-600 font-medium hover:underline '>Directions</a>
-
                         <div className="pt-12 md:pt-0">
                             <h3 className="text-sm/6 font-semibold text-gray-950">Location</h3>
                             <div className="inline-block">
@@ -114,13 +110,17 @@ export default function Footer() {
                                             <span className="text-sm/6 text-gray-700">{type.data}</span>
                                         </li>
                                     ))}
+                                    <li>
+                                        <a href={googlemapsurl}
+                                           className='text-blue-600 font-medium hover:underline '>Directions</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="mt-12 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
-                    <div className="flex gap-x-6 md:order-2">
+                <div className="flex gap-x-6 md:order-2">
                         {socials.map((item) => (
                             <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-800">
                                 <span className="sr-only">{item.name}</span>
