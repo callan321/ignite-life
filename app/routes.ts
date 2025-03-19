@@ -5,6 +5,6 @@ export default [
         [
             index("routes/home.tsx"),
             route("About", "routes/About.tsx"),
-            route("heather", "routes/heather.tsx"),
+            route("Heather", "routes/Heather.tsx"),
         ])
 ] satisfies RouteConfig;
