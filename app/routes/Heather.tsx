@@ -18,30 +18,13 @@ export default function Heather() {
                     <img
                         src="/bowen3.jpg"
                         alt="Slogan"
-                        className="h-full absolute  w-[96rem] object-center"
+                        className="h-full px-12  absolute  w-full object-center"
                     />
-                    <div
-                        className="
-            absolute
-            top-4 right-4
-            sm:top-8 sm:right-8
-            md:top-16 md:right-16
-            flex items-center justify-center
-            h-36 w-36
-            md:h-48 md:w-48
-            lg:h-72 lg:w-72
-            rounded-full bg-white shadow-md
-          "
-                    >
-                        <img
-                            src="/slogan.png"
-                            alt="Slogan"
-                            className="h-full w-full object-cover"
-                        />
-                    </div>
+
                     <div
                         className="w-96 lg:w-[44rem] text-gray-800 p-8 text-center bg-white rounded border-gray-50 opacity-85 shadow-lg">
-                        <h4 className="text-[#7f6000] font-medium text-2xl"> Embracing Change, Healing, Compassion, and Purpose: My Path
+                        <h4 className="text-[#7f6000] font-medium text-2xl"> Embracing Change, Healing, Compassion, and
+                            Purpose: My Path
                         </h4>
                         <br/>
                         <p>
