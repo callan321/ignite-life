@@ -12,7 +12,7 @@ export default function About() {
         <>
             <div className="w-full max-w-[1960px] mx-auto">
                 <div
-                    className="relative isolate flex items-center justify-center h-[36rem] md:h-[48rem] lg:h-[64rem] lg:w-[88] overflow-hidden bg-[#5A6F5A]">
+                    className="relative isolate flex items-center justify-center h-[36rem] md:h-[48rem] lg:h-[64rem] overflow-hidden bg-[#5A6F5A]">
                     <img
                         src="/bowen3.jpg"
                         alt="Slogan"
