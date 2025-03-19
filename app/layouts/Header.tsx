@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Tab from "../components/Tab";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/16/solid";
 import {Dialog, DialogPanel} from "@headlessui/react";
