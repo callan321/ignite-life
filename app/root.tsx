@@ -34,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <link rel="icon" type="image/x-icon" href="/favicon.png"/>
       <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"/>
     </head>
-    <body className='font-sans'>
+    <body>
     {children}
     <ScrollRestoration/>
     <Scripts/>

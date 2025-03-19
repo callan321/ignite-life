@@ -1,5 +1,4 @@
 import type {JSX, SVGProps} from "react";
-import PageLayout from "~/components/PageLayout";
 
 interface locationItem {
     type: string;
@@ -77,8 +76,7 @@ const copyright = <>&copy; 2025 Ignite Life Bowen Therapy. All rights reserved.<
 
 export default function Footer() {
     return (
-        <footer className='pt-12 pb-12'>
-            <PageLayout>
+        <footer className='content-container'>
                 <div className=" pt-12 xl:space-x-8 xl:grid grid-cols-1 md:grid-cols-2">
                     <div className=" flex justify-center items-center">
                         <iframe
@@ -132,7 +130,6 @@ export default function Footer() {
                         {copyright}
                     </p>
                 </div>
-            </PageLayout>
         </footer>
     )
 }

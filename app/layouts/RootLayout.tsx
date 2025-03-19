@@ -5,9 +5,9 @@ import Footer from "~/layouts/Footer";
 
 export default function RootLayout() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#f6f3ee]">
+        <div className="flex flex-col min-h-screen bg-[#f6f3ee] font-sans">
             <Header />
-            <main className="flex-grow">
+            <main>
                 <Outlet />
             </main>
             <Footer />
