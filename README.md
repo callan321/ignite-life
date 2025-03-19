@@ -1,87 +1,134 @@
-# Welcome to React Router!
+# Ignite Life
 
-A modern, production-ready template for building full-stack React applications using React Router.
+This is the reactive frontend for Ignite Life Bowen Therapy. Developed with Next.js, this project aims to create a responsive and intuitive user interface.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+The website is currently under production and can be found here:
 
-## Features
+[Ignite Life Website](https://ignite-life.netlify.app)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Table of Contents
+
+- [Requirements](#requirements)
+    - [Release 1: Landing Page](#release-1-landing-page)
+        - [Layout](#layout)
+        - [Pages](#pages)
+        - [Content and Visual](#content-and-visual)
+        - [Animations and Response](#animations-and-response)
+        - [Accessibility](#accessibility)
+        - [Search Engine Optimisation](#search-engine-optimisation)
+        - [Testing](#testing)
+    - [Release 2: Booking Management System with Authentication and Emails](#release-2-booking-management-system-with-authentication-and-emails)
+    - [Release 3: Custom Newsletters, Blog, and Complete Admin Panel](#release-3-custom-newsletters-blog-and-complete-admin-panel)
+- [Getting Started](#getting-started)
+
+## Requirements
+
+### Release 1: Landing Page
+
+#### Layout
+
+##### Header
+
+- [x] Logo
+- [x] Navigation Links
+- [x] Heading
+
+- [ ] Responsive
+- [ ] Styles
+- [ ] Accessibility
+- [ ] Semantic and Meta
+- [ ] Animations
+- [ ] Performance and SEO
+- [ ] Test - DevTools
+
+##### Footer
+
+- [x] Hours
+- [x] Logo
+- [x] Contact
+- [ ] Social Media
+- [ ] Directions Button
+- [ ] Maps
+- [x] Newsletter
+- [x] Copyright
+
+- [ ] Responsive
+- [ ] Styles
+- [ ] Accessibility
+- [ ] Semantic and Meta
+- [ ] Animations
+- [ ] Performance and SEO
+- [ ] Test - DevTools
+
+#### Pages
+
+- [ ] Testimonials
+
+##### Home
+
+- [ ] Hero Section (Banner/Image Slider)
+- [ ] Introduction Text
+- [ ] Featured Products/Services
+- [ ] Call-to-Action Buttons
+- [ ] Testimonials
+- [ ] Latest News/Blog Posts
+
+- [ ] Responsive
+- [ ] Styles
+- [ ] Accessibility
+- [ ] Semantic and Meta
+- [ ] Animations
+- [ ] Performance and SEO
+- [ ] Test - DevTools
+
+##### About
+
+- [ ] Mission and Vision
+- [ ] Company Values
+- [ ] Testimonials
+
+- [ ] Responsive
+- [ ] Styles
+- [ ] Accessibility
+- [ ] Semantic and Meta
+- [ ] Animations
+- [ ] Performance and SEO
+- [ ] Test - DevTools
+
+##### Book
+
+- [ ] Booking Form
+- [ ] Pricing Information
+- [ ] Customer Testimonials
+- [ ] List of Treatments
+- [ ] Group Sessions Information
+- [ ] Descriptions
+
+- [ ] Responsive
+- [ ] Styles
+- [ ] Accessibility
+- [ ] Semantic and Meta
+- [ ] Animations
+- [ ] Performance and SEO
+- [ ] Test - DevTools
+
+### Release 2: Booking Management System with Authentication and Emails
+
+- Implement user authentication with Supabase
+- Create a booking management system
+- Integrate Amazon SES for email notifications
+
+### Release 3: Custom Newsletters, Blog, and Complete Admin Panel
+
+- Develop a custom admin panel for managing bookings, users and other business operations
+- Implement a system that automatically posts a blog for events and sends campaign emails upon posting
 
 ## Getting Started
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
+First, run the development server:
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
