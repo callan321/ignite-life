@@ -31,12 +31,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <Meta/>
       <Links/>
-      {/* Override */}
       <link rel="icon" type="image/x-icon" href="/favicon.png"/>
       <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"/>
-
     </head>
-    <body>
+    <body className='font-sans'>
     {children}
     <ScrollRestoration/>
     <Scripts/>
