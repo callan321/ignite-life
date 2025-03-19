@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import "tailwindcss";
+
+
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
@@ -12,4 +15,8 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+.parisienne {
+  font-family: 'Parisienne', cursive;
 }
