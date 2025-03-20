@@ -1,4 +1,5 @@
 import type { JSX, SVGProps } from "react";
+import ContentSection from "~/components/ContentSection";
 
 interface locationItem {
   type: string;
@@ -76,7 +77,7 @@ const copyright = (
 
 export default function Footer() {
   return (
-    <footer className="container-content">
+    <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
       <div className=" pt-12 xl:space-x-8 xl:grid grid-cols-1 md:grid-cols-2">
         <div className="flex items-center justify-center ">
           <div className=" aspect-[4/3] w-full">
@@ -142,6 +143,6 @@ export default function Footer() {
           {copyright}
         </p>
       </div>
-    </footer>
+    </ContentSection>
   );
 }

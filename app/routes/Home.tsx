@@ -4,6 +4,7 @@ import Carousel from "~/components/Carousel";
 import ContentSection from "~/components/ContentSection";
 import HeroSection from "~/components/HeroSection";
 import Treatments from "~/components/Treatments";
+import HeroButton from "~/components/HeroButton";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -83,6 +84,12 @@ export default function Home() {
       </ContentSection>
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
         <Treatments />
+        <div className="flex items-center justify-center pt-8">
+          <HeroButton
+            name={"Click see more"}
+            href={"https://ignite-life-bowen-therapy.square.site"}
+          />
+        </div>
       </ContentSection>
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
         <h2 className="text-heading">Frequently Asked Questions</h2>

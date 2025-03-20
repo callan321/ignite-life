@@ -10,18 +10,18 @@ const treatments = [
     image: "/all.png",
   },
   {
-    title: "Little Muchkins",
-    description:
-      "Amidst your babies suffering, Ignite Life’s Baby Bowen presents a gentle yet effective solution, promptly easing distress and physical discomfort.",
-    age: "0-4 yrs",
-    image: "/baby.png",
-  },
-  {
     title: "Big Kids",
     description:
       "As our children grow, the challenges they face can impact their well-being. Bowen helps with emotional balance, growing pains, injuries and stress.",
     image: "/teenager.png",
     age: "5-19 yrs",
+  },
+  {
+    title: "Little Muchkins",
+    description:
+      "Amidst your babies suffering, Ignite Life’s Baby Bowen presents a gentle yet effective solution, promptly easing distress and physical discomfort.",
+    age: "0-4 yrs",
+    image: "/baby.png",
   },
 ];
 
@@ -44,9 +44,6 @@ export default function Treatments() {
               <p className="flex-auto">{treatment.description}</p>
             </div>
           </dd>
-          <div className="flex items-center justify-center pt-5">
-            <HeroButton name={"Click here to learn more"} href={""} />
-          </div>
         </div>
       ))}
     </dl>
