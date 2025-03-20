@@ -1,18 +1,23 @@
 import { type ReactNode } from "react";
 
 export default function HeroSection({
+  bgcolour,
+  src,
+  alt,
   children,
 }: {
+  bgcolour: string;
+  src: string;
+  alt: string;
   children?: React.ReactNode;
 }) {
   return (
-    <section className="w-screen h-[36rem] md:h-screen bg-amber-900 flex items-center justify-center">
-      <div className="w-full px-8 sm:px-12 md:px-16 lg:px-24 xl:px-36  h-full relative ">
-        <img
-          src="/bowen3.jpg"
-          alt="Slogan"
-          className="w-full  h-full object-cover"
-        />
+    <section
+      className="w-screen h-screen flex items-center justify-center"
+      style={{ backgroundColor: bgcolour }}
+    >
+      <div className="w-full px-0 md:px-16 lg:px-24 xl:px-36  h-full relative ">
+        <img src={src} alt={alt} className="w-full  h-full object-cover" />
         <div
           className="
             absolute
