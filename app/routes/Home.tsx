@@ -3,6 +3,7 @@ import type { Route } from "../+types/root";
 import Carousel from "~/components/Carousel";
 import ContentSection from "~/components/ContentSection";
 import HeroSection from "~/components/HeroSection";
+import Treatments from "~/components/Treatments";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -80,11 +81,13 @@ export default function Home() {
           </div>
         </div>
       </ContentSection>
-
-      <div className="container-content">
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+        <Treatments />
+      </ContentSection>
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
         <h2 className="text-heading">Frequently Asked Questions</h2>
         <Accordion questions={faqs} />
-      </div>
+      </ContentSection>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function ContentSection({
         backgroundColor: bgcolour,
       }}
     >
-      <div className="w-full relative px-0 md:px-16 lg:px-24 py-16 xl:px-36">
+      <div className="w-full relative px-0 md:px-16 lg:px-24  xl:px-36">
         <div
           style={{
             backgroundColor: fgcolour,
