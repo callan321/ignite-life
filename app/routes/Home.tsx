@@ -1,6 +1,8 @@
 import Accordion from "~/components/Accordion";
 import type { Route } from "../+types/root";
 import Carousel from "~/components/Carousel";
+import ContentSection from "~/components/ContentSection";
+import HeroSection from "~/components/HeroSection";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -50,13 +52,23 @@ const faqs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col lg:space-y-20 space-y-16">
-      <Carousel />
-
+    <div className="flex flex-col">
+      <HeroSection bgcolour={"#5A6F5A"} src={"/rocks.jpg"} alt={"rocks"}>
+        <div className="w-96 lg:w-[36rem] text-gray-800 p-8 text-center bg-white opacity-85 shadow-lg">
+          <h1 className="xl:text-6xl lg:text-5xl text-4xl font-sans font-extralight">
+            Complements the Meridian System
+          </h1>
+          <br />
+          <h4 className="xl:text-3xl lg:text-[1.75rem] text-2xl font-serif italic  font-light">
+            Many Bowen moves used are localized on key meridian pathways and
+            acupuncture points enhancing Qi flow and inner health.
+          </h4>
+        </div>
+      </HeroSection>
       {/* Hero Section*/}
-      <section className="container-content">
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
         <h2
-          className={`mt-2 text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
+          className={`text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
         >
           {Bowenforall.title}
         </h2>
@@ -67,7 +79,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </ContentSection>
+
       <div className="container-content">
         <h2 className="text-heading">Frequently Asked Questions</h2>
         <Accordion questions={faqs} />
