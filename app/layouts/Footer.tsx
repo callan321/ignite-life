@@ -79,7 +79,7 @@ export default function Footer() {
     <footer className="container-content">
       <div className=" pt-12 xl:space-x-8 xl:grid grid-cols-1 md:grid-cols-2">
         <div className="flex items-center justify-center ">
-          <div className=" aspect-[4/3]">
+          <div className=" aspect-[4/3] w-full">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3495.8637504384947!2d153.5914872754431!3d-28.813133875566677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b907e173f2167ab%3A0xf57717e990379006!2s10%20Granite%20St%2C%20Lennox%20Head%20NSW%202478!5e0!3m2!1sen!2sau!4v1741402387103!5m2!1sen!2sau"
               className="w-full h-full"
@@ -93,20 +93,6 @@ export default function Footer() {
             <h3 className="text-sm/6 font-semibold text-gray-950">Location</h3>
             <div className="inline-block">
               <ul role="list" className="mt-6 space-y-2 text-left">
-                {schedule.map((item) => (
-                  <li key={item.day}>
-                    <span className="text-sm/6 text-gray-700">
-                      {item.day}: {item.hours}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="pt-12 md:pt-0">
-            <h3 className="text-sm/6 font-semibold text-gray-950">Location</h3>
-            <div className="inline-block">
-              <ul role="list" className="mt-6 space-y-2 text-left">
                 {location.map((type) => (
                   <li key={type.type}>
                     <span className="text-sm/6 text-gray-700">{type.data}</span>
@@ -115,11 +101,25 @@ export default function Footer() {
                 <li>
                   <a
                     href={googlemapsurl}
-                    className="text-blue-600 font-medium hover:underline "
+                    className="text-blue-600  hover:underline "
                   >
                     Directions
                   </a>
                 </li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-12 md:pt-0">
+            <h3 className="text-sm/6 font-semibold text-gray-950">Hours</h3>
+            <div className="inline-block">
+              <ul role="list" className="mt-6 space-y-2 text-left">
+                {schedule.map((item) => (
+                  <li key={item.day}>
+                    <span className="text-sm/6 text-gray-700">
+                      {item.day}: {item.hours}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
