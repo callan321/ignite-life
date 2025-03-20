@@ -1,4 +1,4 @@
-import Faqs from "~/components/Faqs";
+import Accordion from "~/components/Accordion";
 import type { Route } from "../+types/root";
 import Carousel from "~/components/Carousel";
 
@@ -14,6 +14,39 @@ const Bowenforall = {
   description:
     "Experience the healing benefits of Bowen therapy, tailored for all ages. Whether it's gentle care for your baby, soothing sessions for your child, or comprehensive therapy for adults.",
 };
+
+const faqs = [
+  {
+    question: "What is Bowen Therapy?",
+    answer:
+      "Bowen Therapy is a gentle, hands-on technique that stimulates the body's natural healing process by using precise rolling movements over muscles, tendons, and fascia.",
+  },
+  {
+    question: "What conditions can Bowen Therapy help with?",
+    answer:
+      "Bowen Therapy is known to help with back pain, migraines, stress, joint pain, digestive issues, and sports injuries, among other conditions.",
+  },
+  {
+    question: "How does Bowen Therapy work?",
+    answer:
+      "Bowen Therapy works by stimulating the nervous system and fascia, encouraging the body to reset, relax, and heal naturally without forceful manipulation.",
+  },
+  {
+    question: "Is Bowen Therapy painful?",
+    answer:
+      "No, Bowen Therapy is very gentle and non-invasive. Most people find it deeply relaxing, and many experience relief after just a few sessions.",
+  },
+  {
+    question: "How long does a Bowen Therapy session last?",
+    answer:
+      "A typical Bowen Therapy session lasts between 45 minutes to an hour. The treatment is followed by a period of rest to allow the body to respond and integrate the changes.",
+  },
+  {
+    question: "How many Bowen Therapy sessions will I need?",
+    answer:
+      "The number of sessions varies based on individual needs, but many people see improvements within 3 to 5 sessions. Some may require more for chronic conditions.",
+  },
+];
 
 export default function Home() {
   return (
@@ -35,8 +68,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Faqs />
+      <div className="container-content">
+        <h2 className="text-heading">Frequently Asked Questions</h2>
+        <Accordion questions={faqs} />
+      </div>
     </div>
   );
 }

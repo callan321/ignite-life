@@ -1,3 +1,30 @@
+import CurvedImage from "./CurvedImage";
+import HeroButton from "./HeroButton";
+
+const treatments = [
+  {
+    title: "Grown-ups",
+    description:
+      "Throughout life, we encounter numerous complex experiences, Bowen provides valuable support to alleviate the lasting effects of emotional and physical challenges.",
+    age: "19-90 yrs",
+    image: "/all.png",
+  },
+  {
+    title: "Little Muchkins",
+    description:
+      "Amidst your babies suffering, Ignite Life’s Baby Bowen presents a gentle yet effective solution, promptly easing distress and physical discomfort.",
+    age: "0-4 yrs",
+    image: "/baby.png",
+  },
+  {
+    title: "Big Kids",
+    description:
+      "As our children grow, the challenges they face can impact their well-being. Bowen helps with emotional balance, growing pains, injuries and stress.",
+    image: "/teenager.png",
+    age: "5-19 yrs",
+  },
+];
+
 export default function Treatments() {
   return (
     <section className="container-content">
