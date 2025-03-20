@@ -1,3 +1,4 @@
+import Faqs from "~/components/Faqs";
 import type { Route } from "../+types/root";
 import Carousel from "~/components/Carousel";
 
@@ -35,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Treatments Section*/}
+      <Faqs />
     </div>
   );
 }
