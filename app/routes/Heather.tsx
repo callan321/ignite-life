@@ -1,6 +1,5 @@
 import HeroSection from "~/components/HeroSection";
 import type { Route } from "../../.react-router/types/app/+types/root";
-import ContentCard from "~/components/ContentCard";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,8 +11,8 @@ export function meta({}: Route.MetaArgs) {
 export default function Heather() {
   return (
     <>
-      <HeroSection bgcolour={"#7f6000"} src={"/bowen3.jpg"} alt={"bowen"}>
-        <ContentCard>
+      <HeroSection bgcolour={"#5A6F5A"} src={"/bowen3.jpg"} alt={"bowen"}>
+        <div className="container-content-sm card">
           <div className="text-center">
             <h4 className="text-heading">
               Embracing Change, Healing, Compassion, and Purpose: My Path
@@ -44,7 +43,7 @@ export default function Heather() {
             </p>
             <p className="text-body">Heather</p>
           </div>
-        </ContentCard>
+        </div>
       </HeroSection>
     </>
   );

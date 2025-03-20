@@ -1,4 +1,3 @@
-import ContentCard from "~/components/ContentCard";
 import HeroSection from "~/components/HeroSection";
 import type { Route } from "../../.react-router/types/app/+types/root";
 
@@ -13,7 +12,7 @@ export default function About() {
   return (
     <>
       <HeroSection bgcolour={"#5A6F5A"} src={"/bowen3.jpg"} alt={"bowen"}>
-        <ContentCard>
+        <div className="container-content-sm card">
           <div className="text-center">
             <h4 className="text-heading">EMBRACE BOWEN</h4>
             <p className="text-body">
@@ -54,7 +53,7 @@ export default function About() {
               Disorders
             </p>
           </div>
-        </ContentCard>
+        </div>
       </HeroSection>
     </>
   );

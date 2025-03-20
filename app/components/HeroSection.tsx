@@ -16,7 +16,7 @@ export default function HeroSection({
       }}
     >
       <div
-        className="w-full min-h-screen relative px-0 md:px-16 lg:px-24 xl:px-36"
+        className="w-full min-h-screen relative container-padding"
         style={{
           backgroundImage: `url(${src})`,
           backgroundSize: "cover",

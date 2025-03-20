@@ -22,7 +22,20 @@ body {
 .container-content {
   @apply max-w-screen-xl px-8 sm:px-12  mx-auto w-full py-12;
 }
+.container-padding {
+  @apply px-0 md:px-16 lg:px-24 xl:px-36;
+}
+.container-content-sm {
+  @apply lg:mx-auto m-8 p-8 sm:m-16 lg:w-full max-w-2xl;
+}
 
+.container-content-xs {
+  @apply p-8 w-96 lg:w-[36rem];
+}
+
+.card {
+  @apply bg-white rounded border border-gray-50 opacity-85 shadow-lg;
+}
 .text-heading {
   @apply text-[#7f6000] text-base font-sans  md:text-lg leading-tight;
 }

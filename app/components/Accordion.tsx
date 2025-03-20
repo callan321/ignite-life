@@ -12,7 +12,7 @@ type Question = {
 
 export default function Accordion({ questions }: { questions: Question[] }) {
   return (
-    <dl className="mt-16 divide-y divide-gray-900/10">
+    <dl className="divide-y divide-gray-900/10">
       {questions.map((question) => (
         <Disclosure
           key={question.question}

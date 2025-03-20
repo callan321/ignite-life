@@ -1,6 +1,5 @@
 import Accordion from "~/components/Accordion";
 import type { Route } from "../+types/root";
-import Carousel from "~/components/Carousel";
 import ContentSection from "~/components/ContentSection";
 import HeroSection from "~/components/HeroSection";
 import Treatments from "~/components/Treatments";
@@ -56,7 +55,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSection bgcolour={"#5A6F5A"} src={"/rocks.jpg"} alt={"rocks"}>
-        <div className="w-96 lg:w-[36rem] text-gray-800 p-8 text-center bg-white opacity-85 shadow-lg">
+        <div className=" text-gray-800  text-center container-content-xs card">
           <h1 className="xl:text-6xl lg:text-5xl text-4xl font-sans font-extralight">
             Complements the Meridian System
           </h1>
@@ -68,17 +67,19 @@ export default function Home() {
         </div>
       </HeroSection>
       {/* Hero Section*/}
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
-        <h2
-          className={`text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
-        >
-          {Bowenforall.title}
-        </h2>
-        <div className=" w-full flex items-center justify-center mt-6">
-          <div className="max-w-2xl">
-            <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
-              {Bowenforall.description}
-            </p>
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
+        <div className="container-content card">
+          <h2
+            className={`text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
+          >
+            {Bowenforall.title}
+          </h2>
+          <div className=" w-full flex items-center justify-center mt-6">
+            <div className="max-w-2xl">
+              <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
+                {Bowenforall.description}
+              </p>
+            </div>
           </div>
         </div>
       </ContentSection>
@@ -93,7 +94,9 @@ export default function Home() {
       </ContentSection>
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
         <h2 className="text-heading">Frequently Asked Questions</h2>
-        <Accordion questions={faqs} />
+        <div className="mt-12">
+          <Accordion questions={faqs} />
+        </div>
       </ContentSection>
     </div>
   );
