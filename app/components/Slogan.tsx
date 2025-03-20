@@ -1,7 +1,7 @@
 export default function Slogan() {
-    return (
-        <div
-            className="
+  return (
+    <div
+      className="
             absolute
             top-4 right-4
             sm:top-8 sm:right-8
@@ -12,12 +12,12 @@ export default function Slogan() {
             lg:h-72 lg:w-72
             rounded-full bg-white shadow-md
           "
-        >
-            <img
-                src="/slogan.png"
-                alt="Slogan"
-                className="h-full w-full object-cover"
-            />
-        </div>
-    );
+    >
+      <img
+        src="/slogan.png"
+        alt="Slogan"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
 }
