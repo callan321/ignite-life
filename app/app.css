@@ -19,6 +19,6 @@ body {
   font-family: "Parisienne", cursive;
 }
 
-.content-container {
-  @apply mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-12;
+.container-content {
+  @apply max-w-screen-xl px-4 sm:px-6 mx-auto w-full lg:px-8 py-12;
 }

@@ -76,16 +76,17 @@ const copyright = (
 
 export default function Footer() {
   return (
-    <footer className="content-container">
+    <footer className="container-content">
       <div className=" pt-12 xl:space-x-8 xl:grid grid-cols-1 md:grid-cols-2">
-        <div className=" flex justify-center items-center">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3495.8637504384947!2d153.5914872754431!3d-28.813133875566677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b907e173f2167ab%3A0xf57717e990379006!2s10%20Granite%20St%2C%20Lennox%20Head%20NSW%202478!5e0!3m2!1sen!2sau!4v1741402387103!5m2!1sen!2sau"
-            width="800"
-            height="600"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div className="flex items-center justify-center ">
+          <div className=" aspect-[4/3]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3495.8637504384947!2d153.5914872754431!3d-28.813133875566677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b907e173f2167ab%3A0xf57717e990379006!2s10%20Granite%20St%2C%20Lennox%20Head%20NSW%202478!5e0!3m2!1sen!2sau!4v1741402387103!5m2!1sen!2sau"
+              className="w-full h-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
         <div className="grid grid-cols-1 xl:pt-0  pt-12 md:grid-cols-2">
           <div>

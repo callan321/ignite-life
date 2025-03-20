@@ -46,7 +46,7 @@ export default function Home() {
       <Carousel />
 
       {/* Hero Section*/}
-      <section className="content-container">
+      <section className="container-content">
         <h2
           className={`mt-2 text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
         >
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Treatments Section*/}
-      <section className="content-container">
+      <section className="container-content">
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {treatments.map((treatment) => (
             <div key={treatment.title} className="flex flex-col">
