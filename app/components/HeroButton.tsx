@@ -8,9 +8,9 @@ export default function HeroButton({
   return (
     <a
       href={href}
-      target="_blank" // Opens in a new tab (optional, remove if not needed)
+      target="_blank"
       rel="noopener noreferrer"
-      className="text-shadow shadow-button hover:shadow-button-xl relative overflow-hidden rounded-md border-2 border-white/75 bg-[#bd9479] px-6 py-3 font-bold uppercase tracking-wide text-white transition-all duration-500 ease-in-out hover:scale-105 hover:border-gray-100 hover:bg-[#b5896f] hover:text-gray-100 text-center"
+      className="relative overflow-hidden text-white rounded-lg border border-gray-200/50 bg-gradient-to-r from-[#c49a7b] to-[#b5896f] px-8 py-3 font-semibold uppercase tracking-wide shadow-md transition-all duration-300 ease-out hover:scale-105 hover:border-gray-300/50 hover:shadow-lg hover:from-[#b5896f] hover:to-[#a8755a] focus:outline-none focus:ring-2 focus:ring-[#b5896f] focus:ring-offset-2"
     >
       {name}
     </a>
