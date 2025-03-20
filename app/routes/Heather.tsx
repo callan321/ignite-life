@@ -18,8 +18,8 @@ export default function Heather() {
             <h4 className="text-heading">
               Embracing Change, Healing, Compassion, and Purpose: My Path
             </h4>
-            <br className="hidden md:block" />
-            <p className="text-body hidden sm:block">
+            <br />
+            <p className="text-body">
               With my family’s growth came a newfound clarity: it was time to
               evolve from a stagnant career of fashion to a more fulfilling path
               that harmonizes my personal principles with my professional

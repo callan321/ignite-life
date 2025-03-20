@@ -24,9 +24,9 @@ body {
 }
 
 .text-heading {
-  @apply text-[#7f6000] text-base  md:text-lg leading-tight;
+  @apply text-[#7f6000] text-base font-sans  md:text-lg leading-tight;
 }
 
 .text-body {
-  @apply text-gray-800  text-sm md:text-base leading-relaxed;
+  @apply text-gray-800 font-sans  text-sm md:text-base leading-relaxed;
 }
