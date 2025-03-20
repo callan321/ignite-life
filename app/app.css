@@ -20,7 +20,7 @@ body {
 }
 
 .container-content {
-  @apply max-w-screen-xl px-8 sm:px-12 md:px-16 lg:px-24 xl:px-36 mx-auto w-full py-12;
+  @apply max-w-screen-xl px-8 sm:px-12  mx-auto w-full py-12;
 }
 
 .text-heading {
