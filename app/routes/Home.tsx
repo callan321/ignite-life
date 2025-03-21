@@ -4,6 +4,7 @@ import ContentSection from "~/components/ContentSection";
 import HeroSection from "~/components/HeroSection";
 import Treatments from "~/components/Treatments";
 import HeroButton from "~/components/HeroButton";
+import Carousel from "~/components/Carousel";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -51,6 +52,21 @@ const faqs = [
   },
 ];
 
+const carousel = [
+  {
+    src: "bowen2.jpg",
+    alt: "A scenic coastal view with rocky shores and ocean waves",
+  },
+  {
+    src: "bowen3.jpg",
+    alt: "A peaceful landscape of Bowen Island with trees and distant hills",
+  },
+  {
+    src: "rocks.jpg",
+    alt: "Close-up of textured rocks along the shoreline",
+  },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -66,7 +82,9 @@ export default function Home() {
           </h4>
         </div>
       </HeroSection>
-      {/* Hero Section*/}
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+        <Carousel items={carousel} />
+      </ContentSection>
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
         <div className="container-content card">
           <h2
