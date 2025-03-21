@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CurvedImage from "./CurvedImage";
 
 type CarouselItem = {
@@ -8,25 +8,40 @@ type CarouselItem = {
 
 export default function Carousel({ items }: { items: CarouselItem[] }) {
   const [current, setCurrent] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const next = () => {
-    setCurrent((prev) => (prev + 1) % items.length);
-  };
-
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + items.length) % items.length);
+  const clearAndStartInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % items.length);
+    }, 5000);
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % items.length);
-    }, 5000);
+    if (!isHovered) {
+      clearAndStartInterval();
+    }
 
-    return () => clearInterval(interval);
-  }, [items.length]);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [current, isHovered, items.length]);
+
+  const next = () => setCurrent((prev) => (prev + 1) % items.length);
+  const prev = () =>
+    setCurrent((prev) => (prev - 1 + items.length) % items.length);
 
   return (
-    <div className="card container-content">
+    <div
+      className="card container-content hover:scale-105 transition-all duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex flex-col">
         <div className="flex justify-between items-center">
           <button className="text-4xl" onClick={prev}>
