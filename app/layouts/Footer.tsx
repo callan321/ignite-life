@@ -1,3 +1,8 @@
+import {
+  BuildingOffice2Icon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/16/solid";
 import type { JSX, SVGProps } from "react";
 import ContentSection from "~/components/ContentSection";
 
@@ -71,13 +76,29 @@ const socials = [
   },
 ];
 
-const copyright = (
-  <>&copy; 2025 Ignite Life Bowen Therapy. All rights reserved.</>
-);
+const copyright = "\u00A9 2025 Ignite Life Bowen Therapy. All rights reserved.";
+
+export const address = {
+  street: "10, Granite St",
+  city: "Lennox Head",
+  state: "New South Whales",
+  postcode: "2478",
+  href: "https://www.google.com/maps/dir/?api=1&destination=10+Granite+St,+Lennox+Head,+NSW,+Australia",
+};
+
+export const email = {
+  email: "ignitelifehealing@gmail.com",
+  href: "mailto:ignitelifehealing@gmail.com",
+};
+
+export const phone = {
+  phone: "0490 034 249",
+  href: "tel:0490 034 249",
+};
 
 export default function Footer() {
   return (
-    <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+    <footer className=" container-content bg-[#f6f3ee] ">
       <div className=" pt-12 xl:space-x-8 xl:grid grid-cols-1 md:grid-cols-2">
         <div className="flex items-center justify-center ">
           <div className=" aspect-[4/3] w-full">
@@ -89,39 +110,74 @@ export default function Footer() {
             ></iframe>
           </div>
         </div>
-        <div className="grid grid-cols-1 xl:pt-0  pt-12 md:grid-cols-2">
-          <div>
-            <h3 className="text-sm/6 font-semibold text-gray-950">Location</h3>
-            <div className="inline-block">
-              <ul role="list" className="mt-6 space-y-2 text-left">
-                {location.map((type) => (
-                  <li key={type.type}>
-                    <span className="text-sm/6 text-gray-700">{type.data}</span>
-                  </li>
-                ))}
-                <li>
-                  <a
-                    href={googlemapsurl}
-                    className="text-blue-600  hover:underline "
-                  >
-                    Directions
-                  </a>
-                </li>
-              </ul>
+        <div>
+          <h2>Contact and Hours</h2>
+          <div className="grid grid-cols-1 xl:pt-0  pt-12 md:grid-cols-2">
+            <div>
+              <dl className="mt-10 space-y-4 text-base/7 text-gray-800">
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Address</span>
+                    <BuildingOffice2Icon
+                      aria-hidden="true"
+                      className="h-7 w-6 text-gray-600"
+                    />
+                  </dt>
+                  <dd>
+                    {address.street}, {address.city}
+                    <br />
+                    {address.state}, {address.postcode}
+                    <br />
+                    <a
+                      href={googlemapsurl}
+                      className="text-blue-600  hover:underline "
+                    >
+                      Directions
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Telephone</span>
+                    <PhoneIcon
+                      aria-hidden="true"
+                      className="h-7 w-6 text-gray-600"
+                    />
+                  </dt>
+                  <dd>
+                    <a href={phone.href} className="hover:text-gray-900">
+                      {phone.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Email</span>
+                    <EnvelopeIcon
+                      aria-hidden="true"
+                      className="h-7 w-6 text-gray-600"
+                    />
+                  </dt>
+                  <dd>
+                    <a href={email.href} className="hover:text-gray-900">
+                      {email.email}
+                    </a>
+                  </dd>
+                </div>
+              </dl>
             </div>
-          </div>
-          <div className="pt-12 md:pt-0">
-            <h3 className="text-sm/6 font-semibold text-gray-950">Hours</h3>
-            <div className="inline-block">
-              <ul role="list" className="mt-6 space-y-2 text-left">
-                {schedule.map((item) => (
-                  <li key={item.day}>
-                    <span className="text-sm/6 text-gray-700">
-                      {item.day}: {item.hours}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+            <div className="pt-12 md:pt-0">
+              <div className="inline-block">
+                <ul role="list" className="mt-8 space-y-2 text-left">
+                  {schedule.map((item) => (
+                    <li key={item.day}>
+                      <span className="text-sm/6 text-gray-800">
+                        {item.day}: {item.hours}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -143,6 +199,6 @@ export default function Footer() {
           {copyright}
         </p>
       </div>
-    </ContentSection>
+    </footer>
   );
 }

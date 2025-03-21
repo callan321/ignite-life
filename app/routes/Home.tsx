@@ -82,7 +82,7 @@ export default function Home() {
           </h4>
         </div>
       </HeroSection>
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
         <Carousel items={carousel} />
       </ContentSection>
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </div>
       </ContentSection>
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
         <Treatments />
         <div className="flex items-center justify-center pt-8">
           <HeroButton
@@ -110,7 +110,7 @@ export default function Home() {
           />
         </div>
       </ContentSection>
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#f6f3ee"}>
+      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
         <h2 className="text-heading">Frequently Asked Questions</h2>
         <div className="mt-12">
           <Accordion questions={faqs} />
