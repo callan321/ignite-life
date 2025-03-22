@@ -1,5 +1,5 @@
 import HeroSection from "~/components/HeroSection";
-import type { Route } from "../../.react-router/types/app/+types/root";
+import type { Route } from "../../+types/root";
 
 export function meta({}: Route.MetaArgs) {
   return [

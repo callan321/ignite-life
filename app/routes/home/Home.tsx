@@ -1,5 +1,5 @@
 import Accordion from "~/components/Accordion";
-import type { Route } from "../+types/root";
+import type { Route } from "../../+types/root";
 import Treatments from "~/components/Treatments";
 import HeroButton from "~/components/HeroButton";
 import Carousel from "~/components/Carousel";
