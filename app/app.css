@@ -6,6 +6,67 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+@keyframes SlideIn {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes SlideInSubtle {
+  0% {
+    transform: translateX(-2.5%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: SlideIn 3s ease-out forwards;
+}
+
+.slide-in-subtle {
+  animation: SlideInSubtle 3s ease-out forwards;
+}
+
+.fade-in {
+  animation: FadeIn 3s ease-out forwards;
+}
+
+.fade-out {
+  animation: FadeOut 1s ease-out forwards;
+}
+
 html,
 body {
   @apply bg-white dark:bg-gray-950;
@@ -51,4 +112,8 @@ body {
 
 .text-shadow {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button-shadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
