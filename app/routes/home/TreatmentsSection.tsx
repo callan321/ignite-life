@@ -1,5 +1,12 @@
 import CurvedImage from "~/components/CurvedImage";
 import HeroButton from "~/components/HeroButton";
+
+const Bowenforall = {
+  title: "Bowen is for Everyone",
+  description:
+    "Experience the healing benefits of Bowen therapy, tailored for all ages. Whether it's gentle care for your baby, soothing sessions for your child, or comprehensive therapy for adults.",
+};
+
 const treatments = [
   {
     title: "Grown-ups",
@@ -28,6 +35,18 @@ export default function TreatmentsSection() {
   return (
     <section className="section">
       <div className="container-content">
+        <div className=" container-content-sm">
+          <h2
+            className={`text-4xl parisienne text-center tracking-tight text-black sm:text-6xl`}
+          >
+            {Bowenforall.title}
+          </h2>
+          <div className=" w-full flex items-center justify-center mt-6">
+            <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
+              {Bowenforall.description}
+            </p>
+          </div>
+        </div>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {treatments.map((treatment) => (
             <div key={treatment.title} className="flex flex-col">
