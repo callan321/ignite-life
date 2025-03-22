@@ -1,11 +1,9 @@
 import Accordion from "~/components/Accordion";
 import type { Route } from "../+types/root";
-import ContentSection from "~/components/ContentSection";
-import HeroSection from "~/components/HeroSection";
 import Treatments from "~/components/Treatments";
 import HeroButton from "~/components/HeroButton";
 import Carousel from "~/components/Carousel";
-import HeroSection2 from "~/components/HeroSection2";
+import HeroSectionCarousel from "~/components/HeroSectionCarousel";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -93,8 +91,8 @@ const heroSections = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <HeroSection2 sections={heroSections} />
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
+      <HeroSectionCarousel sections={heroSections} />
+      <section className="bg-[#5A6F5A]  w-full">
         <div className="container-content card">
           <h2
             className={`text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
@@ -109,8 +107,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </ContentSection>
-      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
+      </section>
+      <section className="container-content">
         <Treatments />
         <div className="flex items-center justify-center pt-8">
           <HeroButton
@@ -118,16 +116,16 @@ export default function Home() {
             href={"https://ignite-life-bowen-therapy.square.site"}
           />
         </div>
-      </ContentSection>
-      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
+      </section>
+      <section className="container-content">
         <Carousel items={carousel} />
-      </ContentSection>
-      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
+      </section>
+      <section className="container-content">
         <h2 className="text-heading">Frequently Asked Questions</h2>
         <div className="mt-12">
           <Accordion questions={faqs} />
         </div>
-      </ContentSection>
+      </section>
     </div>
   );
 }

@@ -8,7 +8,7 @@ interface HeroSectionProps {
   backgroundImage: string;
 }
 
-export default function HeroSection2({
+export default function HeroSectionCarousel({
   sections,
 }: {
   sections: HeroSectionProps[];
@@ -69,14 +69,14 @@ export default function HeroSection2({
   }, [currentSection]);
 
   return (
-    <div className="relative isolate flex h-[36rem] items-center justify-center overflow-hidden bg-ignite-cream md:h-[48rem] lg:h-[64rem]">
+    <section className="relative isolate flex min-h-screen items-center justify-center bg-ignite-cream ">
       {/* Previous Image (fades out) */}
       {prevImage && (
         <img
           key={prevImage}
           alt=""
           src={prevImage}
-          className={`fade-out absolute inset-0 -z-20 h-full w-full max-w-full object-cover transition-opacity duration-1000`}
+          className={`fade-out absolute inset-0 -z-20 h-full w-full  object-cover transition-opacity duration-1000`}
         />
       )}
 
@@ -85,7 +85,7 @@ export default function HeroSection2({
         key={sections[currentSection].backgroundImage}
         alt=""
         src={sections[currentSection].backgroundImage}
-        className="fade-in absolute inset-0 -z-30 h-full w-full max-w-full object-cover transition-opacity duration-1000"
+        className="fade-in absolute inset-0 -z-30 h-full w-full  object-cover transition-opacity duration-1000"
       />
 
       {/* Background Overlay */}
@@ -112,7 +112,7 @@ export default function HeroSection2({
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div className="container-content-sm">
         <div
           key={currentSection}
           className="text-shadow -mt-8 space-y-6 text-center md:space-y-8"
@@ -143,12 +143,12 @@ export default function HeroSection2({
             }`}
           >
             <HeroButton
-              name={"Book Here"}
+              name={"Book Here "}
               href={"https://ignite-life-bowen-therapy.square.site/"}
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
