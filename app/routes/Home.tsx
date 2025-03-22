@@ -5,6 +5,7 @@ import HeroSection from "~/components/HeroSection";
 import Treatments from "~/components/Treatments";
 import HeroButton from "~/components/HeroButton";
 import Carousel from "~/components/Carousel";
+import HeroSection2 from "~/components/HeroSection2";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -28,12 +29,12 @@ const faqs = [
   {
     question: "What conditions can Bowen Therapy help with?",
     answer:
-      "Bowen Therapy is known to help with back pain, migraines, stress, joint pain, digestive issues, and sports injuries, among other conditions.",
+      "Bowen Therapy is known to help with  Physical Injury – Nerve Pain – Mobility – Sleep – Fatigue – Migraines – Grief – Respiratory Issues – Anxiety – Vagus Nerve Dysfunction – TMJ Pain – Scoliosis – Digestive Problems – Sinus Issues – Respiratory Conditions – IBS – Autoimmune Disease Symptoms – Fibromyalgia – Gynaecological Concerns – Erectile Dysfunction – Lymphatic Imbalances and Central Nervous System Disorders",
   },
   {
     question: "How does Bowen Therapy work?",
     answer:
-      "Bowen Therapy works by stimulating the nervous system and fascia, encouraging the body to reset, relax, and heal naturally without forceful manipulation.",
+      "Bowen Therapy works by stimulating the nervous system and fascia, encouraging the body to reset, relax, and heal naturally. Bowen Therapy is holistic body work and doesn’t force or impose changes on the body, it stimulates and asks the body to make corrections, initiating the human body’s innate self-healing response.",
   },
   {
     question: "Is Bowen Therapy painful?",
@@ -54,37 +55,45 @@ const faqs = [
 
 const carousel = [
   {
-    src: "bowen2.jpg",
-    alt: "A scenic coastal view with rocky shores and ocean waves",
+    src: "/testimonials/Evonne.png",
+    alt: "",
   },
   {
-    src: "bowen3.jpg",
-    alt: "A peaceful landscape of Bowen Island with trees and distant hills",
+    src: "/testimonials/Abby.png",
+    alt: "",
   },
   {
-    src: "rocks.jpg",
-    alt: "Close-up of textured rocks along the shoreline",
+    src: "/testimonials/Cindy.png",
+    alt: "",
+  },
+  {
+    src: "/testimonials/Jen.png",
+    alt: "",
+  },
+  {
+    src: "/testimonials/Rosie.png",
+    alt: "",
+  },
+];
+
+const heroSections = [
+  {
+    title: "Welcome ",
+    content: "Your Pathway to Harmonious Healing",
+    backgroundImage: "/hero1.jpg",
+  },
+  {
+    title: "Heal Better - Feel Better",
+    content:
+      "Experience the empowering effect of restorative healing, liberating you from pain and guiding you towards recovery.",
+    backgroundImage: "/rocks.jpg",
   },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <HeroSection bgcolour={"#5A6F5A"} src={"/rocks.jpg"} alt={"rocks"}>
-        <div className=" text-gray-800  text-center container-content-xs card">
-          <h1 className="xl:text-6xl lg:text-5xl text-4xl font-sans font-extralight">
-            Complements the Meridian System
-          </h1>
-          <br />
-          <h4 className="xl:text-3xl lg:text-[1.75rem] text-2xl font-serif italic  font-light">
-            Many Bowen moves used are localized on key meridian pathways and
-            acupuncture points enhancing Qi flow and inner health.
-          </h4>
-        </div>
-      </HeroSection>
-      <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
-        <Carousel items={carousel} />
-      </ContentSection>
+      <HeroSection2 sections={heroSections} />
       <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
         <div className="container-content card">
           <h2
@@ -109,6 +118,9 @@ export default function Home() {
             href={"https://ignite-life-bowen-therapy.square.site"}
           />
         </div>
+      </ContentSection>
+      <ContentSection bgcolour={"#5A6F5A"} fgcolour={"#5A6F5A"}>
+        <Carousel items={carousel} />
       </ContentSection>
       <ContentSection bgcolour={"#f6f3ee"} fgcolour={"#f6f3ee"}>
         <h2 className="text-heading">Frequently Asked Questions</h2>

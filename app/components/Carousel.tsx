@@ -17,7 +17,7 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
     }
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % items.length);
-    }, 5000);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
 
   return (
     <div
-      className="card container-content hover:scale-105 transition-all duration-300"
+      className="bg-[#5A6F5A] container-content"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -48,7 +48,7 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
             ←
           </button>
           <div className="max-w-lg">
-            <CurvedImage src={items[current].src} alt={items[current].alt} />
+            <img src={items[current].src} alt={items[current].alt}></img>
             <p className="text-body">{items[current].alt}</p>
           </div>
           <button className="text-4xl" onClick={next}>

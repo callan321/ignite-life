@@ -19,6 +19,13 @@ body {
   font-family: "Parisienne", cursive;
 }
 
+.ballet {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .container-content {
   @apply max-w-screen-xl px-8 sm:px-12  mx-auto w-full py-12;
 }
@@ -42,4 +49,8 @@ body {
 
 .text-body {
   @apply text-gray-800 font-sans  text-sm md:text-base leading-relaxed;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
