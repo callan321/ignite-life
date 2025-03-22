@@ -1,4 +1,5 @@
 import Accordion from "~/components/Accordion";
+import CurvedImage from "~/components/CurvedImage";
 
 const faqs = [
   {
@@ -35,11 +36,25 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className=" section">
-      <div className="container-content">
-        <div className="flex flex-col w-full  ">
-          <h2 className="text-heading">Frequently Asked Questions</h2>
-          <div className="mt-12">
+    <section className=" section container-content">
+      <div className="space-y-16 md:grid md:grid-cols-2 md:space-y-0 lg:gap-16 md:gap-8">
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-6 text-xl/8 text-gray-600">
+            Curious about Bowen Therapy? Discover its unique approach and the
+            many health benefits it offers. If you have any further enquiries,
+            feel free to get in touch with us for more in depth information!
+          </p>
+
+          <div className="w-full flex items-center md:px-0 px-8 pt-8 md:pt-16 justify-center">
+            <CurvedImage src={"/bowen2.jpg"} alt={""} />
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center  h-full">
+          <div className="w-full">
+            <h3 className="sr-only">Questions about Bowen</h3>
             <Accordion questions={faqs} />
           </div>
         </div>

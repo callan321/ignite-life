@@ -27,7 +27,7 @@ body {
 }
 
 .container-content {
-  @apply max-w-screen-xl p-8 sm:p-12  mx-auto w-full lg:p-24;
+  @apply max-w-screen-xl p-8 sm:p-16  mx-auto w-full md:p-24;
 }
 
 .container-content-sm {
@@ -35,13 +35,7 @@ body {
 }
 
 .section {
-  min-height: 48rem;
-  @apply w-full flex items-center justify-center;
-}
-
-.section-lg {
-  height: 64rem;
-  @apply w-full flex items-center justify-center;
+  @apply w-full flex items-center justify-center min-h-full;
 }
 
 .card {
