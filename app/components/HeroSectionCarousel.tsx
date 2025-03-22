@@ -91,24 +91,29 @@ export default function HeroSectionCarousel({
       {/* Background Overlay */}
       <div className="absolute inset-0 -z-10 bg-black opacity-25"></div>
 
-      <div
-        className="
+      {/* Slogan Overlay */}
+      <div className="absolute h-full max-w-7xl w-full">
+        <div
+          className="
           absolute
-          top-4 right-4
-          sm:top-8 sm:right-8
-          md:top-16 md:right-16
+          top-12 right-12
+          sm:top-14 sm:right-16
+          md:top-24 md:right-8
+          lg:top-14 lg:right-16
           flex items-center justify-center
           h-36 w-36
           md:h-48 md:w-48
-          lg:h-72 lg:w-72
-          rounded-full bg-white shadow-md
+          lg:h-64 lg:w-64
+          xl:h-72 xl:w-72
+          rounded-full bg-white shadow-md 
         "
-      >
-        <img
-          src="/slogan.png"
-          alt="Slogan"
-          className="w-full h-full object-cover"
-        />
+        >
+          <img
+            src="/slogan.png"
+            alt="Slogan"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       {/* Main Content */}
