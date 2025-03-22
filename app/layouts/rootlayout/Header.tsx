@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { Dialog, DialogPanel } from "@headlessui/react";
+import DesktopTabs from "~/components/DesktopTab";
+import DesktopTab from "~/components/DesktopTab";
 
 interface NavLink {
   name: string;
@@ -77,24 +79,29 @@ export default function Header() {
       {/* Desktop Navigation */}
       <div
         className={`fixed top-0 z-40 hidden w-full transition-all duration-300 ease-in-out md:block
-          ${
-            isSolid
-              ? "bg-white/80 backdrop-blur-lg shadow-xl py-4"
-              : "bg-transparent py-8"
-          }
-        `}
+    ${
+      isSolid
+        ? "bg-[#8e715a]/95 backdrop-blur-lg pt-8 shadow-xl py-4"
+        : "bg-transparent pt-14"
+    }
+  `}
       >
-        <div className="mx-auto max-w-7xl px-6">
-          <nav className="flex justify-center items-center -mb-px space-x-8">
-            {navLinks.map((link) => (
-              <Tab
-                key={link.href}
-                href={link.href}
-                name={link.name}
-                external={link.external}
-              />
+        {/* Added flex, items-center, and justify-between here */}
+        <div className="mx-auto max-w-7xl px-8 flex items-center justify-between">
+          <nav className="hidden sm:flex sm:ml-6 sm:gap-8">
+            {navLinks.map((tab: { name: string; href: string }) => (
+              <DesktopTab key={tab.href} name={tab.name} href={tab.href} />
             ))}
           </nav>
+          <div className="hidden lg:mr-12 mr-6 sm:flex">
+            <span
+              className={`text-gold great-vibes text-shadow text-4xl font-medium leading-tight text-gray-100
+                ${isSolid ? "" : "hidden"}
+                `}
+            >
+              Ignite Life
+            </span>
+          </div>
         </div>
       </div>
 
@@ -123,7 +130,7 @@ export default function Header() {
         <DialogPanel className="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Ignite Life Bowen Therapy</span>
               <img
                 alt="Your Company Logo"
                 src="/favicon.png"

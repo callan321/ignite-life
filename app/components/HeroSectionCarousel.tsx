@@ -69,7 +69,7 @@ export default function HeroSectionCarousel({
   }, [currentSection]);
 
   return (
-    <section className="relative isolate flex min-h-screen items-center justify-center bg-ignite-cream ">
+    <section className="relative isolate flex min-h-screen items-center justify-center bg-[#bd9479] ">
       {/* Previous Image (fades out) */}
       {prevImage && (
         <img

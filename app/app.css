@@ -75,6 +75,11 @@ body {
     color-scheme: dark;
   }
 }
+.great-vibes {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .parisienne {
   font-family: "Parisienne", cursive;
@@ -116,4 +121,137 @@ body {
 
 .button-shadow {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: rgba(116, 94, 77, 0);
+  }
+  100% {
+    background-color: rgba(116, 94, 77, 0.8);
+  }
+}
+
+.fade-in-below {
+  animation: fadeInSlideUp 1s ease forwards,
+    fadeInBackground 1s ease-in forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.fade-in-top {
+  animation: fadeInSlideDown 1.5s ease forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: rgba(116, 94, 77, 0);
+  }
+  100% {
+    background-color: rgba(116, 94, 77, 0.8);
+  }
+}
+
+/* Fade Animations */
+.fade-in-below {
+  animation: fadeInSlideUp 1s ease forwards,
+    fadeInBackground 1s ease-in forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.fade-in-top {
+  animation: fadeInSlideDown 1.5s ease forwards;
+}
+
+/* Tab Styles */
+.tab-active {
+  color: #d2e3e4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.tab-inactive {
+  color: #e5e7eb;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.tab-inactive:hover {
+  color: #d2e3e4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Underline effect for both active and inactive tabs */
+.tab-active::after,
+.tab-inactive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 100%;
+  background-color: #d2e3e4;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.bottom-normal::after {
+  bottom: -24px;
+}
+
+.bottom-solid::after {
+  bottom: 0;
+}
+
+.tab-active::after {
+  transform: scaleX(1);
+}
+
+.tab-inactive:hover::after {
+  transform: scaleX(1);
+  background-color: #d2e3e4;
 }

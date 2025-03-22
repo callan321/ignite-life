@@ -1,34 +1,43 @@
 import { NavLink } from "react-router";
 
+interface TabProps {
+  name: string;
+  href: string;
+  external?: boolean;
+  isSolid?: boolean;
+}
+
 export default function Tab({
   name,
   href,
   external = false,
-}: {
-  name: string;
-  href: string;
-  external?: boolean;
-}) {
-  // Common styles
-  const baseClasses = `whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium transition-all duration-300`;
-  const activeClasses = "border-indigo-500 text-indigo-600";
-  const inactiveClasses =
-    "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700";
+  isSolid = false,
+}: TabProps) {
+  const baseClasses =
+    "relative inline-flex items-center p-1 text-lg font-medium";
 
-  return external ? (
-    <a
-      href={href}
-      className={`${baseClasses} ${inactiveClasses}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {name}
-    </a>
-  ) : (
+  if (external) {
+    return (
+      <a
+        href={href}
+        className={`tab-inactive ${
+          isSolid ? "bottom-solid" : "bottom-normal"
+        } ${baseClasses}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {name}
+      </a>
+    );
+  }
+
+  return (
     <NavLink
       to={href}
       className={({ isActive }) =>
-        `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`
+        `${isActive ? "tab-active" : "tab-inactive"} ${
+          isSolid ? "bottom-solid" : "bottom-normal"
+        } ${baseClasses}`
       }
     >
       {name}
