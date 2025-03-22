@@ -1,8 +1,4 @@
-import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/16/solid";
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/16/solid";
 import type { JSX, SVGProps } from "react";
 
 interface locationItem {
@@ -117,7 +113,7 @@ export default function Footer() {
                 <div className="flex gap-x-4">
                   <dt className="flex-none">
                     <span className="sr-only">Address</span>
-                    <BuildingOffice2Icon
+                    <MapPinIcon
                       aria-hidden="true"
                       className="h-7 w-6 text-gray-600"
                     />
@@ -127,12 +123,6 @@ export default function Footer() {
                     <br />
                     {address.state}, {address.postcode}
                     <br />
-                    <a
-                      href={googlemapsurl}
-                      className="text-blue-600  hover:underline "
-                    >
-                      Directions
-                    </a>
                   </dd>
                 </div>
                 <div className="flex gap-x-4">
