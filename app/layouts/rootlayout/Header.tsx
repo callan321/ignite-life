@@ -81,7 +81,7 @@ export default function Header() {
         className={`fixed top-0 z-40 hidden w-full transition-all duration-300 ease-in-out md:block
     ${
       isSolid
-        ? "bg-[#8e715a]/95 backdrop-blur-lg pt-8 shadow-xl py-4"
+        ? "bg-[#8E6F5B] backdrop-blur-lg pt-8 shadow-xl py-4"
         : "bg-transparent pt-14"
     }
   `}
