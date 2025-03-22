@@ -9,39 +9,38 @@ type CarouselItem = {
 export default function Carousel({ items }: { items: CarouselItem[] }) {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   const clearAndStartInterval = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
+
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % items.length);
     }, 3000);
   };
 
   useEffect(() => {
-    if (!isHovered) {
-      clearAndStartInterval();
-    }
-
+    clearAndStartInterval();
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [current, isHovered, items.length]);
+  }, []);
 
-  const next = () => setCurrent((prev) => (prev + 1) % items.length);
-  const prev = () =>
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % items.length);
+    clearAndStartInterval();
+  };
+
+  const prev = () => {
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
+    clearAndStartInterval();
+  };
 
   return (
-    <div
-      className="container-content-sm "
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="container-content-sm ">
       <div className="flex flex-col">
         <div className="flex justify-between items-center">
           <button className="text-4xl" onClick={prev}>
@@ -66,7 +65,10 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
               className={`h-4 w-4 rounded-full ${
                 index === current ? "bg-cyan-950" : "bg-gray-300"
               }`}
-              onClick={() => setCurrent(index)}
+              onClick={() => {
+                setCurrent(index);
+                clearAndStartInterval();
+              }}
             />
           ))}
         </div>
