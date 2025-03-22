@@ -2,8 +2,8 @@ import type { Route } from "../../+types/root";
 import HeroSectionCarousel from "~/components/HeroSectionCarousel";
 import TestimonialsSection from "./TestimonialsSection";
 import FAQSection from "./FAQSection";
-import TreatmentsSection from "./TreatmentsSection";
 import BannerSection from "./BannerSection";
+import TreatmentsSection from "~/routes/home/TreatmentsSection";
 
 export function meta({}: Route.MetaArgs) {
   return [
