@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import CurvedImage from "./CurvedImage";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 
 type CarouselItem = {
   src: string;
@@ -14,7 +14,6 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % items.length);
     }, 3000);
@@ -40,30 +39,39 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
   };
 
   return (
-    <div className="container-content-sm ">
-      <div className="flex flex-col">
-        <div className="flex justify-between items-center">
-          <button className="text-4xl" onClick={prev}>
-            ←
+    <div className="container-content-sm">
+      <div className="flex flex-col items-center">
+        <div className="relative flex justify-center items-center">
+          {/* Left Chevron Button */}
+          <button
+            className="absolute -left-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-md focus:outline-none transition"
+            onClick={prev}
+          >
+            <ChevronLeftIcon className="h-6 w-6" />
           </button>
           <div className="max-w-lg">
             <img
-              className=""
+              className="rounded-4xl shadow-2xl"
               src={items[current].src}
               alt={items[current].alt}
-            ></img>
-            <p className="text-body">{items[current].alt}</p>
+            />
+            <p className="text-center mt-2 text-body">{items[current].alt}</p>
           </div>
-          <button className="text-4xl" onClick={next}>
-            →
+          {/* Right Chevron Button */}
+          <button
+            className="absolute -right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-md focus:outline-none transition"
+            onClick={next}
+          >
+            <ChevronRightIcon className=" h-6 w-6" />
           </button>
         </div>
+        {/* Dots Navigation */}
         <div className="flex justify-center mt-4 space-x-2">
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-4 w-4 rounded-full ${
-                index === current ? "bg-cyan-950" : "bg-gray-300"
+              className={`h-4 w-4 rounded-full shadow ${
+                index === current ? "bg-cyan-950" : "bg-gray-400"
               }`}
               onClick={() => {
                 setCurrent(index);
