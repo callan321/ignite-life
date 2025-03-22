@@ -34,8 +34,14 @@ body {
   @apply lg:mx-auto m-8 p-8 sm:m-16 lg:w-full max-w-2xl;
 }
 
-.container-height {
-  @apply h-screen;
+.section {
+  min-height: 48rem;
+  @apply w-full flex items-center justify-center;
+}
+
+.section-lg {
+  height: 64rem;
+  @apply w-full flex items-center justify-center;
 }
 
 .card {

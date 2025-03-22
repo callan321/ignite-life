@@ -91,39 +91,54 @@ const heroSections = [
 export default function Home() {
   return (
     <div className="flex flex-col">
+      {/* Hero Section */}
       <HeroSectionCarousel sections={heroSections} />
-      <section className="bg-[#5A6F5A]  w-full">
-        <div className="container-content card">
-          <h2
-            className={`text-3xl parisienne text-center tracking-tight text-black sm:text-6xl`}
-          >
-            {Bowenforall.title}
-          </h2>
-          <div className=" w-full flex items-center justify-center mt-6">
-            <div className="max-w-2xl">
-              <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
-                {Bowenforall.description}
-              </p>
+      {/* Intro */}
+      <section className="bg-[#5A6F5A] section ">
+        <div className="container-content ">
+          <div className="card">
+            <div className=" container-content-sm">
+              <h2
+                className={`text-4xl parisienne text-center tracking-tight text-black sm:text-6xl`}
+              >
+                {Bowenforall.title}
+              </h2>
+              <div className=" w-full flex items-center justify-center mt-6">
+                <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
+                  {Bowenforall.description}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="container-content">
-        <Treatments />
-        <div className="flex items-center justify-center pt-8">
-          <HeroButton
-            name={"Click see more"}
-            href={"https://ignite-life-bowen-therapy.square.site"}
-          />
+      {/* Treatments */}
+      <section className="section">
+        <div className="container-content">
+          <Treatments />
+          <div className="flex flex-col space-y-8 items-center justify-center pt-8">
+            <HeroButton
+              name={"Click see more"}
+              href={"https://ignite-life-bowen-therapy.square.site"}
+            />
+          </div>
         </div>
       </section>
-      <section className="container-content">
-        <Carousel items={carousel} />
+      {/* Frequently Asked Questions */}
+      <section className=" section">
+        <div className="container-content">
+          <div className="flex flex-col w-full  ">
+            <h2 className="text-heading">Frequently Asked Questions</h2>
+            <div className="mt-12">
+              <Accordion questions={faqs} />
+            </div>
+          </div>
+        </div>
       </section>
-      <section className="container-content">
-        <h2 className="text-heading">Frequently Asked Questions</h2>
-        <div className="mt-12">
-          <Accordion questions={faqs} />
+      {/* Testimonials */}
+      <section className="bg-[#5A6F5A] section-lg">
+        <div className="container-content">
+          <Carousel items={carousel} />
         </div>
       </section>
     </div>

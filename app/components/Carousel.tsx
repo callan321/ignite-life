@@ -38,7 +38,7 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
 
   return (
     <div
-      className="bg-[#5A6F5A] container-content"
+      className="container-content-sm "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -48,7 +48,11 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
             ←
           </button>
           <div className="max-w-lg">
-            <img src={items[current].src} alt={items[current].alt}></img>
+            <img
+              className=""
+              src={items[current].src}
+              alt={items[current].alt}
+            ></img>
             <p className="text-body">{items[current].alt}</p>
           </div>
           <button className="text-4xl" onClick={next}>

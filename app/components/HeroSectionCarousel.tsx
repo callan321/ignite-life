@@ -112,7 +112,7 @@ export default function HeroSectionCarousel({
       </div>
 
       {/* Main Content */}
-      <div className="container-content-sm">
+      <div className="container-content-sm ">
         <div
           key={currentSection}
           className="text-shadow -mt-8 space-y-6 text-center md:space-y-8"
