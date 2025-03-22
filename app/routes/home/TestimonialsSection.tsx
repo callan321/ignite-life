@@ -24,9 +24,11 @@ const carousel = [
 ];
 
 export default function TestimonialsSection() {
-  <section className="bg-[#5A6F5A] section-lg">
-    <div className="container-content">
-      <Carousel items={carousel} />
-    </div>
-  </section>;
+  return (
+    <section className="bg-[#5A6F5A] section-lg">
+      <div className="container-content">
+        <Carousel items={carousel} />
+      </div>
+    </section>
+  );
 }
