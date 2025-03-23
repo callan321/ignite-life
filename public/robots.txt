@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://www.ignitelife.com.au/sitemap.html
+Disallow: /
