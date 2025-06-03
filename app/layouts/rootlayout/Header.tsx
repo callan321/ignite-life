@@ -56,6 +56,11 @@ export const navLinks: NavLink[] = [
     href: "https://ignite-life-bowen-therapy.square.site",
     external: true,
   },
+  {
+    name: "Gift Cards",
+    href: "https://app.squareup.com/gift/MLTJEAT3PV4WZ/order",
+    external: true,
+  }
 ];
 
 export default function Header() {
