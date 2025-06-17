@@ -31,12 +31,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <link rel="icon" type="image/x-icon" href="/favicon.png" />
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Great+Vibes&family=Parisienne&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body>
         {children}
