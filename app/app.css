@@ -1,9 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet&family=Great+Vibes&family=Parisienne&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --font-sans:
     'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-ballet: 'Ballet', cursive;
+  --font-vibes: 'Great Vibes', cursive;
+  --font-parisienne: 'Parisienne', cursive;
+}
+
+@keyframes SlideIn {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes SlideInSubtle {
+  0% {
+    transform: translateX(-2.5%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: SlideIn 3s ease-out forwards;
+}
+
+.slide-in-subtle {
+  animation: SlideInSubtle 3s ease-out forwards;
+}
+
+.fade-in {
+  animation: FadeIn 3s ease-out forwards;
+}
+
+.fade-out {
+  animation: FadeOut 1s ease-out forwards;
 }
 
 html,
@@ -13,4 +78,188 @@ body {
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+.great-vibes {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.parisienne {
+  font-family: 'Parisienne', cursive;
+}
+
+.ballet {
+  font-family: 'Ballet', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container-content {
+  @apply mx-auto w-full max-w-screen-xl p-8 sm:p-16 md:p-24;
+}
+
+.container-content-sm {
+  @apply m-8 max-w-2xl p-8 sm:m-16 lg:mx-auto lg:w-full;
+}
+
+.section {
+  @apply flex min-h-full w-full items-center justify-center;
+}
+
+.card {
+  @apply rounded border border-gray-200 bg-gray-50 opacity-85 shadow-lg;
+}
+.text-heading {
+  @apply font-sans text-base leading-tight text-[#7f6000] md:text-lg;
+}
+
+.text-body {
+  @apply font-sans text-sm leading-relaxed text-gray-800 md:text-base;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button-shadow {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: rgba(116, 94, 77, 0);
+  }
+  100% {
+    background-color: rgba(116, 94, 77, 0.8);
+  }
+}
+
+.fade-in-below {
+  animation:
+    fadeInSlideUp 1s ease forwards,
+    fadeInBackground 1s ease-in forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.fade-in-top {
+  animation: fadeInSlideDown 1.5s ease forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: rgba(116, 94, 77, 0);
+  }
+  100% {
+    background-color: rgba(116, 94, 77, 0.8);
+  }
+}
+
+/* Fade Animations */
+.fade-in-below {
+  animation:
+    fadeInSlideUp 1s ease forwards,
+    fadeInBackground 1s ease-in forwards;
+  animation-delay: 0s, 0.5s;
+}
+
+.fade-in-top {
+  animation: fadeInSlideDown 1.5s ease forwards;
+}
+
+/* Tab Styles */
+.tab-active {
+  color: #d2e3e4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.tab-inactive {
+  color: #e5e7eb;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.tab-inactive:hover {
+  color: #d2e3e4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition:
+    color 0.5s ease,
+    text-shadow 0.5s ease;
+}
+
+/* Underline effect for both active and inactive tabs */
+.tab-active::after,
+.tab-inactive::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 2px;
+  width: 100%;
+  background-color: #d2e3e4;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.bottom-normal::after {
+  bottom: -24px;
+}
+
+.bottom-solid::after {
+  bottom: 0;
+}
+
+.tab-active::after {
+  transform: scaleX(1);
+}
+
+.tab-inactive:hover::after {
+  transform: scaleX(1);
+  background-color: #d2e3e4;
 }

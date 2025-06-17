@@ -51,3 +51,22 @@ Create a production build:
 ```bash
 npm run build
 ```
+
+## Known Issues
+
+Console log error – safe to ignore:
+
+```js
+main.js:46 Uncaught Error
+    at _.Nc (main.js:46:290)
+    at oaa (main.js:64:239)
+    at Re (main.js:63:172)
+    at new _.G (main.js:286:2267)
+    at new _.gB (common.js:139:2282)
+    at Object.Uvb [as Dg] (search_impl.js:3:23)
+    at search.js:3:536
+```
+
+This error is caused by an embedded third-party script from Google.
+
+It does **not affect the app’s core functionality** and can be safely ignored for now.
