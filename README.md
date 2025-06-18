@@ -54,7 +54,7 @@ npm run build
 
 ## Known Issues
 
-Console log error – safe to ignore:
+### Console log error – safe to ignore:
 
 ```js
 main.js:46 Uncaught Error
@@ -70,3 +70,21 @@ main.js:46 Uncaught Error
 This error is caused by an embedded third-party script from Google.
 
 It does **not affect the app’s core functionality** and can be safely ignored for now.
+
+### Chrome DevTools Issue – Temporary Patch in `/public`
+
+**Error:**
+
+```
+No route matches URL "/.well-known/appspecific/com.chrome.devtools.json"
+```
+
+Chrome DevTools triggers this request automatically. React Router does not handle this path by default.
+
+**Temporary Fix:**  
+An empty static file has been placed in the `public/.well-known/appspecific/` folder as a workaround to suppress the error in the console.
+
+You can **safely delete** this file once the issue is resolved in Chrome or React Router.
+
+**Reference:**  
+[https://github.com/remix-run/react-router/issues/13516](https://github.com/remix-run/react-router/issues/13516)
