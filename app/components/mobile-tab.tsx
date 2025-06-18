@@ -7,7 +7,7 @@ export type TabProps = {
   isSolid?: boolean;
 };
 
-export default function Tab({
+export default function MobileTab({
   name,
   href,
   external = false,

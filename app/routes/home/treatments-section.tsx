@@ -1,5 +1,5 @@
-import CurvedImage from "~/components/CurvedImage";
-import HeroButton from "~/components/HeroButton";
+import CurvedImage from "~/components/curved-image";
+import HeroButton from "~/components/hero-button";
 
 export type Treatment = {
   title: string;

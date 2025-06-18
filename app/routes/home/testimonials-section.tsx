@@ -1,4 +1,4 @@
-import Carousel, { type CarouselItem } from "~/components/Carousel";
+import Carousel, { type CarouselItem } from "~/components/carousel";
 
 export type TestimonialsSectionProps = {
   carousel: CarouselItem[];

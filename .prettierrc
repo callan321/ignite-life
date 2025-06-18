@@ -1,7 +1,0 @@
-{
-  "endOfLine": "lf",
-  "singleAttributePerLine": true,
-  "proseWrap": "always",
-  "printWidth": 80,
-  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-organize-imports"]
-}

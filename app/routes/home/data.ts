@@ -1,7 +1,7 @@
-import type { AccordionItem } from "~/components/Accordion";
-import type { CarouselItem } from "~/components/Carousel";
-import type { HeroSectionItem } from "./HeroSection";
-import type { Treatment, TreatmentSectionContent } from "./TreatmentsSection";
+import type { AccordionItem } from "~/components/accordion";
+import type { CarouselItem } from "~/components/carousel";
+import type { HeroSectionItem } from "./hero-section";
+import type { Treatment, TreatmentSectionContent } from "./treatments-section";
 
 export const faqs: AccordionItem[] = [
   {

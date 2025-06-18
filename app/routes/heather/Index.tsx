@@ -1,9 +1,6 @@
-import HeroSection from "~/components/HeroSection";
-import { meta } from "./meta";
+import HeroSection from "~/components/hero-section";
 
-// TODO : Complete about heather page
-
-export default function Heather() {
+function Heather() {
   return (
     <>
       <HeroSection
@@ -22,18 +19,7 @@ export default function Heather() {
               evolve from a stagnant career of fashion to a more fulfilling path
               that harmonizes my personal principles with my professional
               pursuits. Choosing to take the “road less travelled”, in returning
-              to years of study to become a Specialised Bowen Therapist. This
-              decision has been a transformative experience, guiding me to a
-              destination where my personal values of spreading kindness,
-              compassion and service to humanity, has led me to a career that is
-              both purpose-driven, profoundly rewarding and deeply fulfilling.
-            </p>
-            <br />
-            <p className="text-body">
-              I welcome you to my practice, where I am committed to assisting
-              you in activating your inherent healing potential, enriching your
-              well-being and attaining optimal vitality, with the aid of Bowen
-              therapy’s transformative power.
+              to years of study to become a Specialised Bowen Therapist...
             </p>
             <br />
             <p className="text-body">With much warmth</p>
@@ -48,4 +34,51 @@ export default function Heather() {
   );
 }
 
-export { meta };
+Heather.meta = function meta() {
+  return [
+    { title: "Meet Heather | Ignite Life Bowen Therapy" },
+    {
+      name: "description",
+      content:
+        "Discover Heather’s personal journey from fashion to healing. Learn how her path led to Bowen Therapy — a purpose-driven practice rooted in compassion, transformation, and holistic well-being.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Heather Ignite Life, Bowen Therapy practitioner, healing journey, compassionate therapy, holistic wellness, personal story, therapeutic care",
+    },
+    { name: "robots", content: "index, follow" },
+
+    // Open Graph
+    { property: "og:title", content: "Meet Heather | Ignite Life" },
+    {
+      property: "og:description",
+      content:
+        "Explore Heather’s inspiring journey to becoming a Bowen Therapist. A story of healing, change, and dedication to helping others thrive.",
+    },
+    {
+      property: "og:image",
+      content: "https://www.ignitelife.com.au/images/heather-og.jpg",
+    },
+    {
+      property: "og:url",
+      content: "https://www.ignitelife.com.au/heather",
+    },
+    { property: "og:type", content: "profile" },
+
+    // Twitter
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Meet Heather | Ignite Life" },
+    {
+      name: "twitter:description",
+      content:
+        "Learn how Heather’s career transformation and compassionate mission led her to Bowen Therapy — and how she helps others achieve holistic healing.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://www.ignitelife.com.au/images/heather-twitter.jpg",
+    },
+  ];
+};
+
+export default Heather;

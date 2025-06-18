@@ -1,34 +1,7 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/16/solid";
 import type { JSX, SVGProps } from "react";
-import GoogleMapEmbedded from "~/components/GoogleMapEmbedded";
-
-interface locationItem {
-  type: string;
-  data: string;
-}
-
-const location: locationItem[] = [
-  { type: "Street", data: "10 Granite Street" },
-  { type: "City", data: "Lennox Head" },
-  { type: "State, Postcode", data: "NSW, 2478" },
-];
-
-const googlemapsurl = "https://maps.app.goo.gl/8jMBvfYR9WXKegEe6";
-
-interface ScheduleItem {
-  day: string;
-  hours: string;
-}
-
-const schedule: ScheduleItem[] = [
-  { day: "Monday", hours: "9.30 am - 3.00 pm" },
-  { day: "Tuesday", hours: "9.30 am - 3.00 pm" },
-  { day: "Wednesday", hours: "9.30 am - 3.00 pm" },
-  { day: "Thursday", hours: "9.30 am - 3.00 pm" },
-  { day: "Friday", hours: "9.30 am - 3.00 pm" },
-  { day: "Saturday", hours: "8.00 am - 12.00 pm" },
-  { day: "Sunday", hours: "Closed" },
-];
+import GoogleMapEmbedded from "~/components/google-map-embedded";
+import { address, copyright, email, phone, schedule } from "./data";
 
 const socials = [
   {
@@ -84,27 +57,7 @@ const socials = [
   },
 ];
 
-const copyright = "\u00A9 2025 Ignite Life Bowen Therapy. All rights reserved.";
-
-export const address = {
-  street: "10, Granite St",
-  city: "Lennox Head",
-  state: "New South Whales",
-  postcode: "2478",
-  href: "https://www.google.com/maps/dir/?api=1&destination=10+Granite+St,+Lennox+Head,+NSW,+Australia",
-};
-
-export const email = {
-  email: "ignitelifehealing@gmail.com",
-  href: "mailto:ignitelifehealing@gmail.com",
-};
-
-export const phone = {
-  phone: "0490 034 249",
-  href: "tel:0490 034 249",
-};
-
-export default function Footer() {
+export default function MainFooter() {
   return (
     <footer className="container-content">
       <div className="grid-cols-1 pt-12 md:grid-cols-2 xl:grid xl:space-x-8">

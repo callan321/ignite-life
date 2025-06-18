@@ -1,52 +1,15 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useCallback, useEffect, useState } from "react";
-import { NavLink } from "react-router";
-import DesktopTab from "~/components/DesktopTab";
+import DesktopTab from "~/components/desktop-tab";
 
-interface NavLink {
+type TabNavLink = {
   name: string;
   href: string;
   external?: boolean;
-}
+};
 
-function Tab({
-  name,
-  href,
-  external = false,
-}: {
-  name: string;
-  href: string;
-  external?: boolean;
-}) {
-  // Common styles
-  const baseClasses = `whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium transition-all duration-300`;
-  const activeClasses = "border-indigo-500 text-indigo-600";
-  const inactiveClasses =
-    "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700";
-
-  return external ? (
-    <a
-      href={href}
-      className={`${baseClasses} ${inactiveClasses}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {name}
-    </a>
-  ) : (
-    <NavLink
-      to={href}
-      className={({ isActive }) =>
-        `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`
-      }
-    >
-      {name}
-    </NavLink>
-  );
-}
-
-export const navLinks: NavLink[] = [
+const navLinks: TabNavLink[] = [
   { name: "Home", href: "/" },
   { name: "Get to Know Me", href: "/heather" },
   { name: "About Bowen Therapy", href: "/about" },
@@ -62,7 +25,7 @@ export const navLinks: NavLink[] = [
   },
 ];
 
-export default function Header() {
+export default function MainHeader() {
   const [isSolid, setIsSolid] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -101,7 +64,7 @@ export default function Header() {
           </nav>
           <div className="mr-6 hidden sm:flex lg:mr-12">
             <span
-              className={`text-gold great-vibes text-shadow text-4xl leading-tight font-medium text-gray-100 ${isSolid ? "" : "hidden"} `}
+              className={`great-vibes text-gold text-shadow text-4xl leading-tight font-medium text-gray-100 ${isSolid ? "" : "hidden"} `}
             >
               Ignite Life
             </span>

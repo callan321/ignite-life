@@ -1,14 +1,12 @@
 export type HeroSectionProps = {
   bgcolour: string;
   src: string;
-  alt: string;
   children?: React.ReactNode;
 };
 
 export default function HeroSection({
   bgcolour,
   src,
-  alt,
   children,
 }: HeroSectionProps) {
   return (

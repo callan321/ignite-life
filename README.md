@@ -1,5 +1,7 @@
 # Ignite Life Bowen Therapy
 
+The frontend repository for Ignite Life Bowen Therapy
+
 ## Technology
 
 - React 19
@@ -57,7 +59,7 @@ npm run build
 
 ### Console log error – safe to ignore:
 
-```js
+```txt
 main.js:46 Uncaught Error
     at _.Nc (main.js:46:290)
     at oaa (main.js:64:239)
@@ -77,7 +79,7 @@ for now.
 
 **Error:**
 
-```
+```txt
 No route matches URL "/.well-known/appspecific/com.chrome.devtools.json"
 ```
 

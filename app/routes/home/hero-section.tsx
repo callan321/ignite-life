@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import HeroButton from "~/components/HeroButton";
+import HeroButton from "~/components/hero-button";
 
 export type HeroSectionItem = {
   title: string;

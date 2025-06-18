@@ -1,5 +1,5 @@
-import Accordion, { type AccordionItem } from "~/components/Accordion";
-import CurvedImage from "~/components/CurvedImage";
+import Accordion, { type AccordionItem } from "~/components/accordion";
+import CurvedImage from "~/components/curved-image";
 
 export type FAQSectionProps = {
   faqs: AccordionItem[];

@@ -71,7 +71,7 @@ export default function Carousel({ items }: CarouselProps) {
         </div>
         {/* Dots Navigation */}
         <div className="mt-4 flex justify-center space-x-2">
-          {items.map((_, index) => (
+          {items.map((key, index) => (
             <button
               key={index}
               className={`h-4 w-4 rounded-full shadow ${
