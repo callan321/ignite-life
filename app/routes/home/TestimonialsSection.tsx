@@ -1,29 +1,12 @@
-import Carousel from "~/components/Carousel";
+import Carousel, { type CarouselItem } from "~/components/Carousel";
 
-const carousel = [
-  {
-    src: "/testimonials/Evonne.png",
-    alt: "",
-  },
-  {
-    src: "/testimonials/Abby.png",
-    alt: "",
-  },
-  {
-    src: "/testimonials/Cindy.png",
-    alt: "",
-  },
-  {
-    src: "/testimonials/Jen.png",
-    alt: "",
-  },
-  {
-    src: "/testimonials/Rosie.png",
-    alt: "",
-  },
-];
+export type TestimonialsSectionProps = {
+  carousel: CarouselItem[];
+};
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection({
+  carousel,
+}: TestimonialsSectionProps) {
   return (
     <section className="container-content">
       <Carousel items={carousel} />

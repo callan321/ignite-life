@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
 
-interface DesktopTabProps {
+export type DesktopTabProps = {
   name: string;
   href: string;
-}
+};
 
 export default function DesktopTab({ name, href }: DesktopTabProps) {
   return (

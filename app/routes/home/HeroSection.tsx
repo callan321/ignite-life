@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import HeroButton from "./HeroButton";
+import HeroButton from "~/components/HeroButton";
 
-interface HeroSectionProps {
+export type HeroSectionItem = {
   title: string;
   content: string;
-
   backgroundImage: string;
-}
+};
 
-export default function HeroSectionCarousel({
-  sections,
-}: {
-  sections: HeroSectionProps[];
-}) {
+export type HeroSectionProps = {
+  sections: HeroSectionItem[];
+};
+
+export default function HeroSection({ sections }: HeroSectionProps) {
   const TIMEOUT = 15000;
   const [currentSection, setCurrentSection] = useState(0);
   const [prevImage, setPrevImage] = useState<string | null>(null);

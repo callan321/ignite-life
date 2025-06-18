@@ -1,11 +1,11 @@
 import { NavLink } from "react-router";
 
-interface TabProps {
+export type TabProps = {
   name: string;
   href: string;
   external?: boolean;
   isSolid?: boolean;
-}
+};
 
 export default function Tab({
   name,

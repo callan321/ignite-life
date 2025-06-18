@@ -1,10 +1,9 @@
-export default function CurvedImage({
-  src,
-  alt,
-}: {
+export type CurvedImageProps = {
   src: string;
   alt: string;
-}) {
+};
+
+export default function CurvedImage({ src, alt }: CurvedImageProps) {
   return (
     <div
       className="relative aspect-[8/6] w-full shadow-2xl"

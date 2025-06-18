@@ -1,37 +1,27 @@
 import CurvedImage from "~/components/CurvedImage";
 import HeroButton from "~/components/HeroButton";
 
-const Bowenforall = {
-  title: "Bowen is for Everyone",
-  description:
-    "Experience the healing benefits of Bowen therapy, tailored for all ages. Whether it's gentle care for your baby, soothing sessions for your child, or comprehensive therapy for adults.",
+export type Treatment = {
+  title: string;
+  description: string;
+  age: string;
+  imageUrl: string;
 };
 
-const treatments = [
-  {
-    title: "Grown-ups",
-    description:
-      "Throughout life, we encounter numerous complex experiences, Bowen provides valuable support to alleviate the lasting effects of emotional and physical challenges.",
-    age: "19-90 yrs",
-    image: "/all.png",
-  },
-  {
-    title: "Big Kids",
-    description:
-      "As our children grow, the challenges they face can impact their well-being. Bowen helps with emotional balance, growing pains, injuries and stress.",
-    image: "/teenager.png",
-    age: "5-19 yrs",
-  },
-  {
-    title: "Little Muchkins",
-    description:
-      "Amidst your babies suffering, Ignite Life’s Baby Bowen presents a gentle yet effective solution, promptly easing distress and physical discomfort.",
-    age: "0-4 yrs",
-    image: "/baby.png",
-  },
-];
+export type TreatmentsSectionProps = {
+  treatments: Treatment[];
+  content: TreatmentSectionContent;
+};
 
-export default function TreatmentsSection() {
+export type TreatmentSectionContent = {
+  title: string;
+  description: string;
+};
+
+export default function TreatmentsSection({
+  treatments,
+  content,
+}: TreatmentsSectionProps) {
   return (
     <section className="section">
       <div className="container-content">
@@ -39,11 +29,11 @@ export default function TreatmentsSection() {
           <h2
             className={`parisienne text-center text-4xl tracking-tight text-black sm:text-6xl`}
           >
-            {Bowenforall.title}
+            {content.title}
           </h2>
           <div className="mt-6 flex w-full items-center justify-center">
             <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
-              {Bowenforall.description}
+              {content.description}
             </p>
           </div>
         </div>
@@ -52,7 +42,7 @@ export default function TreatmentsSection() {
             <div key={treatment.title} className="flex flex-col">
               <dt className="text-base leading-7 font-semibold text-white">
                 <div className="flex items-center justify-between">
-                  <CurvedImage src={treatment.image} alt={treatment.title} />
+                  <CurvedImage src={treatment.imageUrl} alt={treatment.title} />
                 </div>
                 <h3 className="mt-2 p-6 text-center text-2xl text-gray-800 lg:p-8">
                   {treatment.title}

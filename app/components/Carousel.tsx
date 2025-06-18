@@ -1,12 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 
-type CarouselItem = {
+export type CarouselItem = {
   src: string;
   alt: string;
 };
 
-export default function Carousel({ items }: { items: CarouselItem[] }) {
+export type CarouselProps = {
+  items: CarouselItem[];
+};
+
+export default function Carousel({ items }: CarouselProps) {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 

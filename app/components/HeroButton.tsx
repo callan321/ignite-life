@@ -1,10 +1,9 @@
-export default function HeroButton({
-  name,
-  href,
-}: {
+type HeroButtonProps = {
   name: string;
   href: string;
-}) {
+};
+
+export default function HeroButton({ name, href }: HeroButtonProps) {
   return (
     <a
       href={href}
