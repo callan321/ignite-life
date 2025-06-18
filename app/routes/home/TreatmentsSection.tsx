@@ -39,10 +39,16 @@ export default function TreatmentsSection({
         </div>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {treatments.map((treatment) => (
-            <div key={treatment.title} className="flex flex-col">
+            <div
+              key={treatment.title}
+              className="flex flex-col"
+            >
               <dt className="text-base leading-7 font-semibold text-white">
                 <div className="flex items-center justify-between">
-                  <CurvedImage src={treatment.imageUrl} alt={treatment.title} />
+                  <CurvedImage
+                    src={treatment.imageUrl}
+                    alt={treatment.title}
+                  />
                 </div>
                 <h3 className="mt-2 p-6 text-center text-2xl text-gray-800 lg:p-8">
                   {treatment.title}

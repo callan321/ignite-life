@@ -20,7 +20,10 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
           </p>
 
           <div className="flex w-full items-center justify-center px-8 pt-8 md:px-0 md:pt-16">
-            <CurvedImage src={"/bowen2.jpg"} alt={""} />
+            <CurvedImage
+              src={"/bowen2.jpg"}
+              alt={""}
+            />
           </div>
         </div>
         <div className="flex h-full w-full items-center justify-center">

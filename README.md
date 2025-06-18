@@ -21,10 +21,11 @@
 - Tailwind class sorting
 - Recommended extensions
 
-VS Code will prompt to apply these settings and install extensions automatically.
+VS Code will prompt to apply these settings and install extensions
+automatically.
 
-If you use another editor or want to use your own settings:
-Just delete the .vscode/ folder.
+If you use another editor or want to use your own settings: Just delete the
+.vscode/ folder.
 
 ### Installation
 
@@ -69,7 +70,8 @@ main.js:46 Uncaught Error
 
 This error is caused by an embedded third-party script from Google.
 
-It does **not affect the app’s core functionality** and can be safely ignored for now.
+It does **not affect the app’s core functionality** and can be safely ignored
+for now.
 
 ### Chrome DevTools Issue – Temporary Patch in `/public`
 
@@ -79,12 +81,15 @@ It does **not affect the app’s core functionality** and can be safely ignored 
 No route matches URL "/.well-known/appspecific/com.chrome.devtools.json"
 ```
 
-Chrome DevTools triggers this request automatically. React Router does not handle this path by default.
+Chrome DevTools triggers this request automatically. React Router does not
+handle this path by default.
 
 **Temporary Fix:**  
-An empty static file has been placed in the `public/.well-known/appspecific/` folder as a workaround to suppress the error in the console.
+An empty static file has been placed in the `public/.well-known/appspecific/`
+folder as a workaround to suppress the error in the console.
 
-You can **safely delete** this file once the issue is resolved in Chrome or React Router.
+You can **safely delete** this file once the issue is resolved in Chrome or
+React Router.
 
 **Reference:**  
 [https://github.com/remix-run/react-router/issues/13516](https://github.com/remix-run/react-router/issues/13516)

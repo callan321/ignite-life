@@ -15,7 +15,11 @@ export default function CurvedImage({ src, alt }: CurvedImageProps) {
         overflow: "hidden",
       }}
     >
-      <img src={src} alt={alt} className="h-full w-full object-cover" />
+      <img
+        src={src}
+        alt={alt}
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }

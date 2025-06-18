@@ -37,7 +37,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
       setTimeout(() => {
         setPrevImage(sections[currentSection].backgroundImage);
         setCurrentSection((prevSection) =>
-          prevSection === sections.length - 1 ? 0 : prevSection + 1
+          prevSection === sections.length - 1 ? 0 : prevSection + 1,
         );
         setFadeOutTitle(false);
         setFadeOutContent(false);

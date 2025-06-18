@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
+import { useEffect, useRef, useState } from "react";
 
 export type CarouselItem = {
   src: string;

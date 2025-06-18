@@ -38,7 +38,10 @@ export default function Accordion({ items }: AccordionProps) {
               </span>
             </DisclosureButton>
           </dt>
-          <DisclosurePanel as="dd" className="mt-2 pr-12">
+          <DisclosurePanel
+            as="dd"
+            className="mt-2 pr-12"
+          >
             <p className="text-base/7 text-gray-600">{item.content}</p>
           </DisclosurePanel>
         </Disclosure>

@@ -6,7 +6,11 @@ import { meta } from "./meta";
 export default function About() {
   return (
     <>
-      <HeroSection bgcolour={"#5A6F5A"} src={"/bowen3.jpg"} alt={"bowen"}>
+      <HeroSection
+        bgcolour={"#5A6F5A"}
+        src={"/bowen3.jpg"}
+        alt={"bowen"}
+      >
         <div className="container-content-sm card">
           <div className="text-center">
             <h4 className="text-heading">EMBRACE BOWEN</h4>
