@@ -10,9 +10,7 @@ export default function DesktopTab({ name, href }: DesktopTabProps) {
     <NavLink
       to={href}
       className={({ isActive }) =>
-        `${isActive ? "tab-active" : "tab-inactive"} 
-          
-         relative inline-flex items-center p-1 text-lg font-medium`
+        `${isActive ? "tab-active" : "tab-inactive"} relative inline-flex items-center p-1 text-lg font-medium`
       }
     >
       {name}

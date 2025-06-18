@@ -16,7 +16,7 @@ export default function HeroSection({
       }}
     >
       <div
-        className="w-full min-h-screen relative"
+        className="relative min-h-screen w-full"
         style={{
           backgroundImage: `url(${src})`,
           backgroundSize: "cover",
@@ -24,26 +24,14 @@ export default function HeroSection({
           backgroundClip: "content-box",
         }}
       >
-        <div
-          className="
-          absolute
-          top-4 right-4
-          sm:top-8 sm:right-8
-          md:top-16 md:right-16
-          flex items-center justify-center
-          h-36 w-36
-          md:h-48 md:w-48
-          lg:h-72 lg:w-72
-          rounded-full bg-white shadow-md
-        "
-        >
+        <div className="absolute top-4 right-4 flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-md sm:top-8 sm:right-8 md:top-16 md:right-16 md:h-48 md:w-48 lg:h-72 lg:w-72">
           <img
             src="/slogan.png"
             alt="Slogan"
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
-        <div className="relative z-10 flex justify-center items-center min-h-screen">
+        <div className="relative z-10 flex min-h-screen items-center justify-center">
           {children}
         </div>
       </div>

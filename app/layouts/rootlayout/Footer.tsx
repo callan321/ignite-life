@@ -1,6 +1,6 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/16/solid';
-import type { JSX, SVGProps } from 'react';
-import GoogleMapEmbedded from '~/components/GoogleMapEmbedded';
+import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/16/solid";
+import type { JSX, SVGProps } from "react";
+import GoogleMapEmbedded from "~/components/GoogleMapEmbedded";
 
 interface locationItem {
   type: string;
@@ -8,12 +8,12 @@ interface locationItem {
 }
 
 const location: locationItem[] = [
-  { type: 'Street', data: '10 Granite Street' },
-  { type: 'City', data: 'Lennox Head' },
-  { type: 'State, Postcode', data: 'NSW, 2478' },
+  { type: "Street", data: "10 Granite Street" },
+  { type: "City", data: "Lennox Head" },
+  { type: "State, Postcode", data: "NSW, 2478" },
 ];
 
-const googlemapsurl = 'https://maps.app.goo.gl/8jMBvfYR9WXKegEe6';
+const googlemapsurl = "https://maps.app.goo.gl/8jMBvfYR9WXKegEe6";
 
 interface ScheduleItem {
   day: string;
@@ -21,19 +21,19 @@ interface ScheduleItem {
 }
 
 const schedule: ScheduleItem[] = [
-  { day: 'Monday', hours: '9.30 am - 3.00 pm' },
-  { day: 'Tuesday', hours: '9.30 am - 3.00 pm' },
-  { day: 'Wednesday', hours: '9.30 am - 3.00 pm' },
-  { day: 'Thursday', hours: '9.30 am - 3.00 pm' },
-  { day: 'Friday', hours: '9.30 am - 3.00 pm' },
-  { day: 'Saturday', hours: '8.00 am - 12.00 pm' },
-  { day: 'Sunday', hours: 'Closed' },
+  { day: "Monday", hours: "9.30 am - 3.00 pm" },
+  { day: "Tuesday", hours: "9.30 am - 3.00 pm" },
+  { day: "Wednesday", hours: "9.30 am - 3.00 pm" },
+  { day: "Thursday", hours: "9.30 am - 3.00 pm" },
+  { day: "Friday", hours: "9.30 am - 3.00 pm" },
+  { day: "Saturday", hours: "8.00 am - 12.00 pm" },
+  { day: "Sunday", hours: "Closed" },
 ];
 
 const socials = [
   {
-    name: 'Facebook',
-    href: 'https://www.facebook.com/ignitelifehealing/',
+    name: "Facebook",
+    href: "https://www.facebook.com/ignitelifehealing/",
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -45,8 +45,8 @@ const socials = [
     ),
   },
   {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/ignite.life_bowen.therapy/',
+    name: "Instagram",
+    href: "https://www.instagram.com/ignite.life_bowen.therapy/",
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -58,8 +58,8 @@ const socials = [
     ),
   },
   {
-    name: 'YouTube',
-    href: 'https://www.youtube.com/@ignitelifehealings',
+    name: "YouTube",
+    href: "https://www.youtube.com/@ignitelifehealings",
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -72,24 +72,24 @@ const socials = [
   },
 ];
 
-const copyright = '\u00A9 2025 Ignite Life Bowen Therapy. All rights reserved.';
+const copyright = "\u00A9 2025 Ignite Life Bowen Therapy. All rights reserved.";
 
 export const address = {
-  street: '10, Granite St',
-  city: 'Lennox Head',
-  state: 'New South Whales',
-  postcode: '2478',
-  href: 'https://www.google.com/maps/dir/?api=1&destination=10+Granite+St,+Lennox+Head,+NSW,+Australia',
+  street: "10, Granite St",
+  city: "Lennox Head",
+  state: "New South Whales",
+  postcode: "2478",
+  href: "https://www.google.com/maps/dir/?api=1&destination=10+Granite+St,+Lennox+Head,+NSW,+Australia",
 };
 
 export const email = {
-  email: 'ignitelifehealing@gmail.com',
-  href: 'mailto:ignitelifehealing@gmail.com',
+  email: "ignitelifehealing@gmail.com",
+  href: "mailto:ignitelifehealing@gmail.com",
 };
 
 export const phone = {
-  phone: '0490 034 249',
-  href: 'tel:0490 034 249',
+  phone: "0490 034 249",
+  href: "tel:0490 034 249",
 };
 
 export default function Footer() {

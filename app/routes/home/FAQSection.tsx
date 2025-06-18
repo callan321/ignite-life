@@ -36,8 +36,8 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className=" section container-content">
-      <div className="space-y-16 md:grid md:grid-cols-2 md:space-y-0 lg:gap-16 md:gap-8">
+    <section className="section container-content">
+      <div className="space-y-16 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:gap-16">
         <div>
           <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
             Frequently Asked Questions
@@ -48,11 +48,11 @@ export default function FAQSection() {
             feel free to get in touch with us for more in depth information!
           </p>
 
-          <div className="w-full flex items-center md:px-0 px-8 pt-8 md:pt-16 justify-center">
+          <div className="flex w-full items-center justify-center px-8 pt-8 md:px-0 md:pt-16">
             <CurvedImage src={"/bowen2.jpg"} alt={""} />
           </div>
         </div>
-        <div className="w-full flex items-center justify-center  h-full">
+        <div className="flex h-full w-full items-center justify-center">
           <div className="w-full">
             <h3 className="sr-only">Questions about Bowen</h3>
             <Accordion questions={faqs} />

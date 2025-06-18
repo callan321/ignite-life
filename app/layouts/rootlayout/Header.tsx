@@ -60,7 +60,7 @@ export const navLinks: NavLink[] = [
     name: "Gift Cards",
     href: "https://app.squareup.com/gift/MLTJEAT3PV4WZ/order",
     external: true,
-  }
+  },
 ];
 
 export default function Header() {
@@ -83,26 +83,22 @@ export default function Header() {
     <header>
       {/* Desktop Navigation */}
       <div
-        className={`fixed top-0 z-40 hidden w-full transition-all duration-300 ease-in-out md:block
-    ${
-      isSolid
-        ? "bg-[#8E6F5B] backdrop-blur-lg pt-8 shadow-xl py-4"
-        : "bg-transparent pt-14"
-    }
-  `}
+        className={`fixed top-0 z-40 hidden w-full transition-all duration-300 ease-in-out md:block ${
+          isSolid
+            ? "bg-[#8E6F5B] py-4 pt-8 shadow-xl backdrop-blur-lg"
+            : "bg-transparent pt-14"
+        } `}
       >
         {/* Added flex, items-center, and justify-between here */}
-        <div className="mx-auto max-w-7xl px-8 flex items-center justify-between">
-          <nav className="hidden sm:flex sm:ml-6 sm:gap-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-8">
+          <nav className="hidden sm:ml-6 sm:flex sm:gap-8">
             {navLinks.map((tab: { name: string; href: string }) => (
               <DesktopTab key={tab.href} name={tab.name} href={tab.href} />
             ))}
           </nav>
-          <div className="hidden lg:mr-12 mr-6 sm:flex">
+          <div className="mr-6 hidden sm:flex lg:mr-12">
             <span
-              className={`text-gold great-vibes text-shadow text-4xl font-medium leading-tight text-gray-100
-                ${isSolid ? "" : "hidden"}
-                `}
+              className={`text-gold great-vibes text-shadow text-4xl leading-tight font-medium text-gray-100 ${isSolid ? "" : "hidden"} `}
             >
               Ignite Life
             </span>
@@ -112,7 +108,7 @@ export default function Header() {
 
       {/* Mobile Menu Button */}
       {!isMobileMenuOpen && (
-        <div className="flex items-center bg-transparent fixed top-0 z-40 p-8 md:hidden">
+        <div className="fixed top-0 z-40 flex items-center bg-transparent p-8 md:hidden">
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(true)}
@@ -128,7 +124,7 @@ export default function Header() {
       <Dialog
         open={isMobileMenuOpen}
         onClose={setIsMobileMenuOpen}
-        className="md:hidden z-50 "
+        className="z-50 md:hidden"
       >
         <div className="fixed inset-0 z-10" />
 

@@ -69,14 +69,14 @@ export default function HeroSectionCarousel({
   }, [currentSection]);
 
   return (
-    <section className="relative isolate flex min-h-screen items-center justify-center bg-[#bd9479] ">
+    <section className="relative isolate flex min-h-screen items-center justify-center bg-[#bd9479]">
       {/* Previous Image (fades out) */}
       {prevImage && (
         <img
           key={prevImage}
           alt=""
           src={prevImage}
-          className={`fade-out absolute inset-0 -z-20 h-full w-full  object-cover transition-opacity duration-1000`}
+          className={`fade-out absolute inset-0 -z-20 h-full w-full object-cover transition-opacity duration-1000`}
         />
       )}
 
@@ -85,45 +85,31 @@ export default function HeroSectionCarousel({
         key={sections[currentSection].backgroundImage}
         alt=""
         src={sections[currentSection].backgroundImage}
-        className="fade-in absolute inset-0 -z-30 h-full w-full  object-cover transition-opacity duration-1000"
+        className="fade-in absolute inset-0 -z-30 h-full w-full object-cover transition-opacity duration-1000"
       />
 
       {/* Background Overlay */}
       <div className="absolute inset-0 -z-10 bg-black opacity-25"></div>
 
       {/* Slogan Overlay */}
-      <div className="absolute h-full max-w-7xl w-full">
-        <div
-          className="
-          absolute
-          top-12 right-12
-          sm:top-14 sm:right-16
-          md:top-24 md:right-8
-          lg:top-14 lg:right-16
-          flex items-center justify-center
-          h-36 w-36
-          md:h-48 md:w-48
-          lg:h-64 lg:w-64
-          xl:h-72 xl:w-72
-          rounded-full bg-white shadow-md 
-        "
-        >
+      <div className="absolute h-full w-full max-w-7xl">
+        <div className="absolute top-12 right-12 flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-md sm:top-14 sm:right-16 md:top-24 md:right-8 md:h-48 md:w-48 lg:top-14 lg:right-16 lg:h-64 lg:w-64 xl:h-72 xl:w-72">
           <img
             src="/slogan.png"
             alt="Slogan"
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container-content-sm ">
+      <div className="container-content-sm">
         <div
           key={currentSection}
           className="text-shadow -mt-8 space-y-6 text-center md:space-y-8"
         >
           <h1
-            className={`text-4xl parisienne tracking-tight text-shadow text-white sm:text-6xl ${
+            className={`parisienne text-shadow text-4xl tracking-tight text-white sm:text-6xl ${
               titleVisible ? "slide-in" : "opacity-0"
             } ${fadeOutTitle ? "fade-out" : ""}`}
           >
@@ -133,7 +119,7 @@ export default function HeroSectionCarousel({
           <p
             className={`text-3xl ${
               contentVisible ? "slide-in" : "opacity-0"
-            } text-shadow  leading-8 text-gray-100 ${
+            } text-shadow leading-8 text-gray-100 ${
               fadeOutContent ? "fade-out" : ""
             }`}
           >

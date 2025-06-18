@@ -7,7 +7,7 @@ export default function CurvedImage({
 }) {
   return (
     <div
-      className="relative shadow-2xl w-full aspect-[8/6]"
+      className="relative aspect-[8/6] w-full shadow-2xl"
       style={{
         borderTopLeftRadius: "50%",
         borderTopRightRadius: "50%",
@@ -16,7 +16,7 @@ export default function CurvedImage({
         overflow: "hidden",
       }}
     >
-      <img src={src} alt={alt} className="w-full h-full object-cover" />
+      <img src={src} alt={alt} className="h-full w-full object-cover" />
     </div>
   );
 }

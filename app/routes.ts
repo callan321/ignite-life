@@ -3,12 +3,12 @@ import {
   index,
   layout,
   route,
-} from '@react-router/dev/routes';
+} from "@react-router/dev/routes";
 
 export default [
-  layout('layouts/rootlayout/RootLayout.tsx', [
-    index('routes/home/Home.tsx'),
-    route('About', 'routes/about/About.tsx'),
-    route('Heather', 'routes/heather/Heather.tsx'),
+  layout("layouts/rootlayout/RootLayout.tsx", [
+    index("routes/home/Home.tsx"),
+    route("About", "routes/about/About.tsx"),
+    route("Heather", "routes/heather/Heather.tsx"),
   ]),
 ] satisfies RouteConfig;

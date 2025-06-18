@@ -41,10 +41,10 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
   return (
     <div className="container-content-sm">
       <div className="flex flex-col items-center">
-        <div className="relative flex justify-center items-center">
+        <div className="relative flex items-center justify-center">
           {/* Left Chevron Button */}
           <button
-            className="absolute -left-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-md focus:outline-none transition"
+            className="absolute -left-6 rounded-full bg-gray-800 p-3 text-white shadow-md transition hover:bg-gray-700 focus:outline-none"
             onClick={prev}
           >
             <ChevronLeftIcon className="h-6 w-6" />
@@ -55,18 +55,18 @@ export default function Carousel({ items }: { items: CarouselItem[] }) {
               src={items[current].src}
               alt={items[current].alt}
             />
-            <p className="text-center mt-2 text-body">{items[current].alt}</p>
+            <p className="text-body mt-2 text-center">{items[current].alt}</p>
           </div>
           {/* Right Chevron Button */}
           <button
-            className="absolute -right-6 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-md focus:outline-none transition"
+            className="absolute -right-6 rounded-full bg-gray-800 p-3 text-white shadow-md transition hover:bg-gray-700 focus:outline-none"
             onClick={next}
           >
-            <ChevronRightIcon className=" h-6 w-6" />
+            <ChevronRightIcon className="h-6 w-6" />
           </button>
         </div>
         {/* Dots Navigation */}
-        <div className="flex justify-center mt-4 space-x-2">
+        <div className="mt-4 flex justify-center space-x-2">
           {items.map((_, index) => (
             <button
               key={index}

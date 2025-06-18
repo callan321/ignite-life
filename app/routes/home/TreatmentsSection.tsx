@@ -35,13 +35,13 @@ export default function TreatmentsSection() {
   return (
     <section className="section">
       <div className="container-content">
-        <div className=" container-content-sm">
+        <div className="container-content-sm">
           <h2
-            className={`text-4xl parisienne text-center tracking-tight text-black sm:text-6xl`}
+            className={`parisienne text-center text-4xl tracking-tight text-black sm:text-6xl`}
           >
             {Bowenforall.title}
           </h2>
-          <div className=" w-full flex items-center justify-center mt-6">
+          <div className="mt-6 flex w-full items-center justify-center">
             <p className="text-left text-lg leading-8 text-gray-700 sm:text-center">
               {Bowenforall.description}
             </p>
@@ -50,14 +50,14 @@ export default function TreatmentsSection() {
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {treatments.map((treatment) => (
             <div key={treatment.title} className="flex flex-col">
-              <dt className="text-base font-semibold leading-7 text-white">
+              <dt className="text-base leading-7 font-semibold text-white">
                 <div className="flex items-center justify-between">
                   <CurvedImage src={treatment.image} alt={treatment.title} />
                 </div>
                 <h3 className="mt-2 p-6 text-center text-2xl text-gray-800 lg:p-8">
                   {treatment.title}
                 </h3>
-                <h4 className="text-center -mt-6 text-gray-600">
+                <h4 className="-mt-6 text-center text-gray-600">
                   {treatment.age}
                 </h4>
               </dt>
@@ -69,7 +69,7 @@ export default function TreatmentsSection() {
             </div>
           ))}
         </dl>
-        <div className="flex flex-col space-y-8 items-center justify-center pt-8">
+        <div className="flex flex-col items-center justify-center space-y-8 pt-8">
           <HeroButton
             name={"Click see more"}
             href={"https://ignite-life-bowen-therapy.square.site"}
