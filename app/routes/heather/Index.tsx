@@ -1,6 +1,6 @@
 import HeroSection from "~/components/hero-section";
 
-function Heather() {
+export default function Heather() {
   return (
     <>
       <HeroSection
@@ -80,5 +80,3 @@ Heather.meta = function meta() {
     },
   ];
 };
-
-export default Heather;

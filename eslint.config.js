@@ -10,7 +10,7 @@ import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
-    ignores: ["dist", "build", "node_modules", "public", ".react-router"],
+    ignores: ["build", "node_modules", "public", ".react-router"],
   },
 
   // Base JS/TS/React rules

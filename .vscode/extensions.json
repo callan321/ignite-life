@@ -1,7 +1,16 @@
 {
   "recommendations": [
     "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "hnw.vscode-auto-open-markdown-preview",
+    "streetsidesoftware.code-spell-checker",
     "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss"
+    "visualstudioexptteam.vscodeintellicode",
+    "mhutchie.git-graph",
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-preview-github-styles",
+    "pkief.material-icon-theme"
   ]
 }

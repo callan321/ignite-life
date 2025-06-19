@@ -1,9 +1,6 @@
-// app/routes/about/index.tsx
-
 import HeroSection from "~/components/hero-section";
-import type { Route } from "../../+types/root"; // Your app's route typings
 
-function About() {
+export default function About() {
   return (
     <HeroSection
       bgcolour="#5A6F5A"
@@ -55,8 +52,7 @@ function About() {
   );
 }
 
-// eslint-disable-next-line no-empty-pattern
-About.meta = function meta({}: Route.MetaArgs) {
+About.meta = function meta() {
   return [
     // Primary SEO tags
     {
@@ -110,5 +106,3 @@ About.meta = function meta({}: Route.MetaArgs) {
     },
   ];
 };
-
-export default About;

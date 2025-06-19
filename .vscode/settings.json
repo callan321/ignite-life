@@ -2,19 +2,13 @@
   "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-  "editor.codeActionsOnSave": [
-    "source.formatDocument",    
-    "source.fixAll.eslint"        
-  ],
-
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
-
   "prettier.requireConfig": true,
   "css.validate": false,
   "tailwindCSS.experimental.classRegex": [

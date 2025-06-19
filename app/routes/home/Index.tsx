@@ -1,9 +1,8 @@
-import TreatmentsSection from "~/routes/home/treatments-section";
-import type { Route } from "../../+types/root";
 import { Bowenforall, carousel, faqs, heroSections, treatments } from "./data";
 import FAQSection from "./faq-section";
 import HeroSection from "./hero-section";
 import TestimonialsSection from "./testimonials-section";
+import TreatmentsSection from "./treatments-section";
 
 function Home() {
   return (
@@ -19,8 +18,7 @@ function Home() {
   );
 }
 
-// eslint-disable-next-line no-empty-pattern
-Home.meta = function meta({}: Route.MetaArgs) {
+Home.meta = function meta() {
   return [
     // Primary SEO tags
     { title: "Ignite Life - Bowen Therapy" },
