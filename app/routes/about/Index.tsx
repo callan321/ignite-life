@@ -12,7 +12,7 @@ export default function About() {
           <h4 className="text-heading">EMBRACE BOWEN</h4>
           <p className="text-body">
             Optimise your body’s full potential with Heather’s Bowen Therapy.
-            Harnessing holistic principles, Bowen Therapy utilizes gentle,
+            Harnessing holistic principles, Bowen Therapy utilises gentle,
             therapeutic touch to empower your body’s intrinsic ability to heal
             and protect itself.
           </p>
