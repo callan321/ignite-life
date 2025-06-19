@@ -6,9 +6,9 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  layout("layouts/rootlayout/root-layout.tsx", [
+  layout("layouts/root-layout/root-layout.tsx", [
     index("routes/home/index.tsx"),
-    route("About", "routes/about/index.tsx"),
-    route("Heather", "routes/heather/index.tsx"),
+    route("about", "routes/about/index.tsx"),
+    route("heather", "routes/heather/index.tsx"),
   ]),
 ] satisfies RouteConfig;

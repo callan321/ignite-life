@@ -2,7 +2,6 @@ import js from "@eslint/js";
 import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
 import unicorn from "eslint-plugin-unicorn";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
@@ -29,7 +28,6 @@ export default defineConfig([
     plugins: {
       react,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
       unicorn,
       prettier,
     },
@@ -48,12 +46,6 @@ export default defineConfig([
 
       // React Hooks
       ...reactHooks.configs.recommended.rules,
-
-      // React Refresh
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
 
       // Unicorn
       "unicorn/filename-case": ["error", { cases: { kebabCase: true } }],
