@@ -18,5 +18,8 @@
     "className=\"([^\"]*)",
     "className={`([^`}]+)`",
     "class=\"([^\"]*)\""
+  ],
+  "cSpell.words": [
+    "appspecific"
   ]
 }

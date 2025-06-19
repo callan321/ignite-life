@@ -11,6 +11,10 @@
     "mhutchie.git-graph",
     "yzhang.markdown-all-in-one",
     "bierner.markdown-preview-github-styles",
-    "pkief.material-icon-theme"
+    "pkief.material-icon-theme",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "davidanson.vscode-markdownlint",
+    "gruntfuggly.todo-tree"
   ]
 }

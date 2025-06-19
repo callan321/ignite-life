@@ -57,7 +57,7 @@ npm run build
 
 ## Known Issues
 
-### Console log error – safe to ignore:
+### Console log error – safe to ignore
 
 ```txt
 main.js:46 Uncaught Error
