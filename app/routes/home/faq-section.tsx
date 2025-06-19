@@ -1,4 +1,4 @@
-import Accordion, { type AccordionItem } from "~/components/accordion";
+import Accordion, { type AccordionItem } from "~/components/ccordion";
 import CurvedImage from "~/components/curved-image";
 
 export type FAQSectionProps = {

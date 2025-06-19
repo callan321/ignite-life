@@ -1,5 +1,5 @@
-import type { AccordionItem } from "~/components/accordion";
-import type { CarouselItem } from "~/components/carousel";
+import type { AccordionItem } from "~/components/ccordion";
+import type { CarouselItem } from "~/components/arousel";
 import type { HeroSectionItem } from "./hero-section";
 import type { Treatment, TreatmentSectionContent } from "./treatments-section";
 
