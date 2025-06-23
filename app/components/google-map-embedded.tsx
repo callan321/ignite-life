@@ -1,5 +1,3 @@
-// TODO: Replace with static image or proper map lib if iframe console error becomes an issue.
-
 export default function GoogleMapEmbedded() {
   return (
     <iframe
