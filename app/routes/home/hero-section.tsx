@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HeroButton from "~/components/hero-button";
+import IgniteLifeSlogan from "~/components/ignite-life-slogan";
 
 export type HeroSectionItem = {
   title: string;
@@ -91,15 +92,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
       <div className="absolute inset-0 -z-10 bg-black opacity-25"></div>
 
       {/* Slogan Overlay */}
-      <div className="absolute h-full w-full max-w-7xl">
-        <div className="absolute top-12 right-12 flex h-36 w-36 items-center justify-center rounded-full bg-white shadow-md sm:top-14 sm:right-16 md:top-24 md:right-8 md:h-48 md:w-48 lg:top-14 lg:right-16 lg:h-64 lg:w-64 xl:h-72 xl:w-72">
-          <img
-            src="/slogan.png"
-            alt="Slogan"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
+      <IgniteLifeSlogan />
 
       {/* Main Content */}
       <div className="container-content-sm">

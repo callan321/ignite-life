@@ -1,41 +1,51 @@
 // routes/home/index.tsx
 import type { MetaFunction } from "react-router";
-import { Bowenforall, carousel, faqs, heroSections, treatments } from "./data";
+import {
+  BowenForAll,
+  carousel,
+  faqs,
+  faqsSectionContent,
+  heroSections,
+  treatments,
+} from "./data";
 import FAQSection from "./faq-section";
 import HeroSection from "./hero-section";
 import TestimonialsSection from "./testimonials-section";
 import TreatmentsSection from "./treatments-section";
-
 export const meta: MetaFunction = () => {
   return [
-    { title: "Ignite Life - Bowen Therapy" },
+    // Google-supported tags
+    {
+      title:
+        "Bowen Therapy in Lennox Head & Ballina | Ignite Life – Natural Healing",
+    },
     {
       name: "description",
       content:
-        "Discover holistic healing through Bowen Therapy at Ignite Life. Our landing page offers personalized treatments for all ages, comprehensive FAQs, client testimonials, and natural pain relief strategies to empower your wellness journey.",
-    },
-    {
-      name: "keywords",
-      content:
-        "Bowen Therapy, holistic healing, natural pain relief, personalized treatments, wellness, FAQs, client testimonials, Ignite Life",
+        "Looking for Bowen Therapy near Ballina or Lennox Head? Ignite Life offers gentle, natural bodywork to ease pain, stress, and tension. A holistic alternative to massage therapy for healing.",
     },
     {
       name: "robots",
       content: "index, follow",
     },
+
     // Open Graph
     {
       property: "og:title",
-      content: "Ignite Life - Bowen Therapy for Everyone",
+      content: "Natural Bowen Therapy in Lennox Head & Ballina | Ignite Life",
     },
     {
       property: "og:description",
       content:
-        "Explore the benefits of Bowen Therapy at Ignite Life. Learn about tailored treatments, read FAQs, and view client testimonials to guide your path to natural healing and well-being.",
+        "Heal naturally with Bowen Therapy at Ignite Life in Lennox Head, near Ballina. Support for pain, injury, fatigue, and emotional well being.",
     },
     {
       property: "og:image",
-      content: "https://www.ignitelife.com.au/images/landing-og.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/sloganwhitebg.jpg",
+    },
+    {
+      property: "og:image:alt",
+      content: "Ignite Life Bowen Therapy logo and slogan on white background",
     },
     {
       property: "og:url",
@@ -45,23 +55,28 @@ export const meta: MetaFunction = () => {
       property: "og:type",
       content: "website",
     },
-    // Twitter
+    {
+      property: "og:site_name",
+      content: "Ignite Life Bowen Therapy",
+    },
+
+    // Twitter Card
     {
       name: "twitter:card",
       content: "summary_large_image",
     },
     {
       name: "twitter:title",
-      content: "Ignite Life - Bowen Therapy for Everyone",
+      content: "Bowen Therapy in Lennox Head & Ballina | Ignite Life",
     },
     {
       name: "twitter:description",
       content:
-        "Experience holistic healing with Bowen Therapy at Ignite Life. Discover personalized treatments, in-depth FAQs, and testimonials that support your wellness journey.",
+        "Gentle Bowen Therapy supporting healing, mobility, and wellness in Ballina, Lennox Head, and Northern Rivers.",
     },
     {
       name: "twitter:image",
-      content: "https://www.ignitelife.com.au/images/landing-twitter.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/sloganwhitebg.jpg",
     },
   ];
 };
@@ -72,9 +87,12 @@ export default function Home() {
       <HeroSection sections={heroSections} />
       <TreatmentsSection
         treatments={treatments}
-        content={Bowenforall}
+        content={BowenForAll}
       />
-      <FAQSection faqs={faqs} />
+      <FAQSection
+        faqs={faqs}
+        content={faqsSectionContent}
+      />
       <TestimonialsSection carousel={carousel} />
     </div>
   );

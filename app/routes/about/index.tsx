@@ -3,36 +3,37 @@ import HeroSection from "~/components/hero-section";
 
 export const meta: MetaFunction = () => {
   return [
+    // Google-supported tags
     {
-      title: "Embrace Bowen Therapy | Expert Manual Therapy & Holistic Healing",
+      title: "About Bowen Therapy | Ignite Life – Lennox Head & Ballina",
     },
     {
       name: "description",
       content:
-        "Learn about the Bowen Method – a gentle, strategic approach to manual therapy that activates your body's self-healing response.",
+        "Bowen Therapy at Ignite Life offers a gentle, hands-on alternative to massage. Serving Lennox Head, Ballina, and Byron Bay. Learn how it supports natural healing, pain relief, and nervous system balance.",
     },
     {
       name: "robots",
       content: "index, follow",
     },
-    {
-      name: "keywords",
-      content:
-        "Bowen Therapy, manual therapy, holistic healing, pain relief, wellness",
-    },
+
     // Open Graph
     {
       property: "og:title",
-      content: "Embrace Bowen Therapy",
+      content: "About Bowen Therapy | Ignite Life – Natural Healing",
     },
     {
       property: "og:description",
       content:
-        "Discover the transformative benefits of Bowen Therapy. Gentle manual techniques to optimize healing.",
+        "Explore Bowen Therapy in Lennox Head, near Ballina and Byron Bay. Gentle therapy for pain, stress, and holistic wellness.",
     },
     {
       property: "og:image",
-      content: "https://www.ignitelife.com.au/images/about-og.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/bowen3.jpg",
+    },
+    {
+      property: "og:image:alt",
+      content: "Peaceful Bowen Therapy session in Lennox Head clinic",
     },
     {
       property: "og:url",
@@ -42,6 +43,11 @@ export const meta: MetaFunction = () => {
       property: "og:type",
       content: "website",
     },
+    {
+      property: "og:site_name",
+      content: "Ignite Life Bowen Therapy",
+    },
+
     // Twitter
     {
       name: "twitter:card",
@@ -49,15 +55,16 @@ export const meta: MetaFunction = () => {
     },
     {
       name: "twitter:title",
-      content: "Embrace Bowen Therapy",
+      content: "About Bowen Therapy | Ignite Life",
     },
     {
       name: "twitter:description",
-      content: "Unlock your body's healing potential with the Bowen Method.",
+      content:
+        "Gentle and holistic Bowen Therapy for pain and stress relief. Serving Lennox Head, Ballina, and Byron Bay regions.",
     },
     {
       name: "twitter:image",
-      content: "https://www.ignitelife.com.au/images/about-twitter.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/bowen3.jpg",
     },
   ];
 };
@@ -65,48 +72,53 @@ export const meta: MetaFunction = () => {
 export default function About() {
   return (
     <HeroSection
-      bgcolour="#5A6F5A"
-      src="/bowen3.jpg"
-      alt="bowen"
+      bgcolor="#5A6F5A"
+      src="/images/hero/bowen3.jpg"
     >
       <div className="container-content-sm card">
         <div className="text-center">
           <h4 className="text-heading">EMBRACE BOWEN</h4>
           <p className="text-body">
-            Optimise your body's full potential with Heather's Bowen Therapy.
-            Harnessing holistic principles, Bowen Therapy utilises gentle,
-            therapeutic touch to empower your body's intrinsic ability to heal
-            and protect itself.
+            Unlock your body’s natural ability to heal with Bowen Therapy at
+            Ignite Life. Based in Lennox Head and supporting clients from
+            Ballina, Byron Bay, and the Northern Rivers, Heather offers a unique
+            approach to pain relief, nervous system balance, and overall
+            well-being.
+          </p>
+          <br />
+          <h4 className="text-heading">IS BOWEN THERAPY LIKE MASSAGE?</h4>
+          <p className="text-body">
+            While Bowen Therapy is not massage, it shares many of the same
+            benefits — like reducing pain, relaxing the body, and restoring
+            mobility. Instead of kneading or deep pressure, Bowen involves
+            gentle rolling movements over specific areas of the body to trigger
+            healing responses. It’s ideal for those seeking a softer, more
+            holistic alternative to traditional massage in Ballina or Byron Bay.
           </p>
           <br />
           <h4 className="text-heading">THE BOWEN METHOD</h4>
           <p className="text-body">
-            Bowen is a strategic form of manual therapy, designed to target
-            specific body points, muscles, ligaments, tendons and fascia to
-            enhance cellular communication, synchronise brain and nervous system
-            function, and facilitate correction of dysfunction to restore
-            homeostasis.
+            Bowen is a precise, strategic technique that works across fascia,
+            muscles, tendons, and nerves. By stimulating these points in
+            sequences, Bowen helps re-align body systems, reset the nervous
+            system, and activate self-healing — often with long-lasting results.
           </p>
           <br />
-          <h4 className="text-heading">BOWEN CAN HELP</h4>
+          <h4 className="text-heading">HOW BOWEN CAN HELP</h4>
           <p className="text-body">
-            Bowen Therapy is holistic body work and doesn't force or impose
-            changes on the body—it stimulates and 'asks' the body to make
-            corrections, initiating the human body's innate self-healing
-            response. Therefore, Bowen can be used to treat and help a wide
-            variety of issues from musculoskeletal or related neurological
-            problems, including acute sports injuries and chronic or organic
-            conditions.
+            Clients visit for many reasons — acute injuries, chronic pain,
+            fatigue, emotional stress, or just a sense of imbalance. Because
+            Bowen is non-invasive and gentle, it's suitable for all ages and
+            many conditions. It helps the body heal without forcing it.
           </p>
           <br />
-          <h4 className="text-heading">For Example:</h4>
+          <h4 className="text-heading">Common Concerns Treated:</h4>
           <p className="text-body">
-            Physical Injury – Nerve Pain – Mobility – Sleep – Fatigue –
-            Migraines – Grief – Respiratory Issues – Anxiety – Vagus Nerve
-            Dysfunction – TMJ Pain – Scoliosis – Digestive Problems – Sinus
-            Issues – IBS – Autoimmune Disease Symptoms – Fibromyalgia –
-            Gynaecological Concerns – Erectile Dysfunction – Lymphatic
-            Imbalances and Central Nervous System Disorders
+            Muscle & Joint Pain – Back & Neck Tension – Fatigue – Sleep
+            Disturbances – Migraines – Anxiety – TMJ & Jaw Issues – Digestive
+            Imbalances – Scoliosis – Nerve Pain – Respiratory Issues –
+            Autoimmune Symptoms – Lymphatic Stagnation – Fibromyalgia – Grief –
+            Vagus Nerve Dysfunction – Chronic Pain – and more.
           </p>
         </div>
       </div>

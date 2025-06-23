@@ -1,9 +1,11 @@
 import {
   isRouteErrorResponse,
   Links,
+  Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  type MetaFunction,
 } from "react-router";
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -30,6 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
+        <Meta />
         <Links />
         <link
           rel="icon"
@@ -78,3 +81,15 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     </main>
   );
 }
+
+export const meta: MetaFunction = () => [
+  { title: "Ignite Life Bowen Therapy" },
+  {
+    name: "description",
+    content: "Natural healing and pain relief in Lennox Head & Byron Bay.",
+  },
+  // Open Graph Global
+  { property: "og:site_name", content: "Ignite Life" },
+  { property: "og:locale", content: "en_AU" },
+  { property: "og:type", content: "website" },
+];

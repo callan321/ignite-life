@@ -3,36 +3,38 @@ import HeroSection from "~/components/hero-section";
 
 export const meta: MetaFunction = () => {
   return [
+    // Google-supported tags
     {
-      title: "Meet Heather | Ignite Life Bowen Therapy",
+      title:
+        "Meet Heather – Bowen Therapist in Lennox Head & Ballina | Ignite Life",
     },
     {
       name: "description",
       content:
-        "Discover Heather's personal journey from fashion to healing. Learn how her path led to Bowen Therapy — a purpose-driven practice rooted in compassion, transformation, and holistic well-being.",
-    },
-    {
-      name: "keywords",
-      content:
-        "Heather Ignite Life, Bowen Therapy practitioner, healing journey, compassionate therapy, holistic wellness, personal story, therapeutic care",
+        "Heather is a Bowen Therapist based in Lennox Head, serving the Ballina region. Explore her journey from fashion to healing and how she now supports wellness with holistic bodywork.",
     },
     {
       name: "robots",
       content: "index, follow",
     },
+
     // Open Graph
     {
       property: "og:title",
-      content: "Meet Heather | Ignite Life",
+      content: "Meet Heather – Bowen Therapist | Ignite Life",
     },
     {
       property: "og:description",
       content:
-        "Explore Heather's inspiring journey to becoming a Bowen Therapist. A story of healing, change, and dedication to helping others thrive.",
+        "Meet Heather, a dedicated Bowen Therapist in Lennox Head near Ballina. Discover her story and how she brings holistic healing through gentle, therapeutic care.",
     },
     {
       property: "og:image",
-      content: "https://www.ignitelife.com.au/images/heather-og.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/heather.jpg",
+    },
+    {
+      property: "og:image:alt",
+      content: "Heather offering a peaceful Bowen Therapy session",
     },
     {
       property: "og:url",
@@ -42,6 +44,11 @@ export const meta: MetaFunction = () => {
       property: "og:type",
       content: "profile",
     },
+    {
+      property: "og:site_name",
+      content: "Ignite Life Bowen Therapy",
+    },
+
     // Twitter
     {
       name: "twitter:card",
@@ -49,16 +56,16 @@ export const meta: MetaFunction = () => {
     },
     {
       name: "twitter:title",
-      content: "Meet Heather | Ignite Life",
+      content: "Heather – Bowen Therapist | Ignite Life Lennox Head & Ballina",
     },
     {
       name: "twitter:description",
       content:
-        "Learn how Heather's career transformation and compassionate mission led her to Bowen Therapy — and how she helps others achieve holistic healing.",
+        "Discover Heather’s journey into Bowen Therapy. Based in Lennox Head and serving Ballina, she offers natural, holistic support for pain and stress relief.",
     },
     {
       name: "twitter:image",
-      content: "https://www.ignitelife.com.au/images/heather-twitter.jpg",
+      content: "https://www.ignitelife.com.au/images/hero/heather.jpg",
     },
   ];
 };
@@ -66,9 +73,8 @@ export const meta: MetaFunction = () => {
 export default function Heather() {
   return (
     <HeroSection
-      bgcolour="#5A6F5A"
-      src="/bowen3.jpg"
-      alt="bowen"
+      bgcolor="#5A6F5A"
+      src="/images/hero/bowen3.jpg"
     >
       <div className="container-content-sm card">
         <div className="text-center">
@@ -78,14 +84,22 @@ export default function Heather() {
           <br />
           <p className="text-body">
             With my family's growth came a newfound clarity: it was time to
-            evolve from a stagnant career of fashion to a more fulfilling path
-            that harmonizes my personal principles with my professional
-            pursuits. Choosing to take the "road less travelled", in returning
-            to years of study to become a Specialised Bowen Therapist...
+            evolve from a stagnant career in fashion to a more fulfilling path
+            that aligned with my values and passion for helping others. I chose
+            the road less travelled — returning to study and becoming a
+            Specialised Bowen Therapist.
           </p>
           <br />
-          <p className="text-body">With much warmth</p>
-          <p className="text-body">I look forward to meeting and helping you</p>
+          <p className="text-body">
+            Today, I offer gentle, holistic Bowen Therapy to clients across
+            Lennox Head and Ballina, helping them reconnect with their body’s
+            natural ability to heal.
+          </p>
+          <br />
+          <p className="text-body">With much warmth,</p>
+          <p className="text-body">
+            I look forward to meeting and supporting you,
+          </p>
           <p className="text-body">Heather</p>
         </div>
       </div>
