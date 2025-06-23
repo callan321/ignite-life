@@ -1,5 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { useAutoAdvance } from "~/hooks/useAutoAdvance";
 
 export type CarouselItem = {
   src: string;
@@ -7,39 +8,25 @@ export type CarouselItem = {
 };
 
 export type CarouselProps = {
-  items: CarouselItem[];
+  items: [CarouselItem, ...CarouselItem[]];
 };
 
 export default function Carousel({ items }: CarouselProps) {
   const [current, setCurrent] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const TIMEOUT = 3000;
+  // current item protected by % length
+  const currentItem = items[current]!;
 
-  const clearAndStartInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-    intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % items.length);
-    }, 3000);
-  };
-
-  useEffect(() => {
-    clearAndStartInterval();
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
+  useAutoAdvance(items.length, TIMEOUT, () => {
+    setCurrent((prev) => (prev + 1) % items.length);
+  });
 
   const next = () => {
     setCurrent((prev) => (prev + 1) % items.length);
-    clearAndStartInterval();
   };
 
   const prev = () => {
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
-    clearAndStartInterval();
   };
 
   return (
@@ -56,10 +43,9 @@ export default function Carousel({ items }: CarouselProps) {
           <div className="max-w-lg">
             <img
               className="rounded-4xl shadow-2xl"
-              src={items[current].src}
-              alt={items[current].alt}
+              src={currentItem.src}
+              alt={currentItem.alt}
             />
-            <p className="text-body mt-2 text-center">{items[current].alt}</p>
           </div>
           {/* Right Chevron Button */}
           <button
@@ -79,7 +65,6 @@ export default function Carousel({ items }: CarouselProps) {
               }`}
               onClick={() => {
                 setCurrent(index);
-                clearAndStartInterval();
               }}
             />
           ))}

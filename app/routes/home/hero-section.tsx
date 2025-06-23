@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroButton from "~/components/hero-button";
 import IgniteLifeSlogan from "~/components/ignite-life-slogan";
+import { useAutoAdvance } from "~/hooks/useAutoAdvance";
 
 export type HeroSectionItem = {
   title: string;
@@ -9,7 +10,7 @@ export type HeroSectionItem = {
 };
 
 export type HeroSectionProps = {
-  sections: HeroSectionItem[];
+  sections: [HeroSectionItem, ...HeroSectionItem[]];
 };
 
 export default function HeroSection({ sections }: HeroSectionProps) {
@@ -25,76 +26,59 @@ export default function HeroSection({ sections }: HeroSectionProps) {
   const [fadeOutContent, setFadeOutContent] = useState(false);
   const [fadeOutButton, setFadeOutButton] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeOutButton(true);
-      setTimeout(() => {
-        setFadeOutContent(true);
-      }, 600);
-      setTimeout(() => {
-        setFadeOutTitle(true);
-      }, 1200);
+  const currentItem = sections[currentSection]!;
 
-      setTimeout(() => {
-        setPrevImage(sections[currentSection].backgroundImage);
-        setCurrentSection((prevSection) =>
-          prevSection === sections.length - 1 ? 0 : prevSection + 1,
-        );
-        setFadeOutTitle(false);
-        setFadeOutContent(false);
-        setFadeOutButton(false);
-        setTitleVisible(false);
-        setContentVisible(false);
-        setButtonVisible(false);
-      }, 2000);
-    }, TIMEOUT);
+  useAutoAdvance(sections.length, TIMEOUT, () => {
+    setFadeOutButton(true);
+    setTimeout(() => setFadeOutContent(true), 600);
+    setTimeout(() => setFadeOutTitle(true), 1200);
 
-    return () => clearInterval(interval);
-  }, [sections.length, currentSection, sections]);
+    setTimeout(() => {
+      setPrevImage(currentItem.backgroundImage);
+      setCurrentSection((prev) =>
+        prev === sections.length - 1 ? 0 : prev + 1,
+      );
+      setFadeOutTitle(false);
+      setFadeOutContent(false);
+      setFadeOutButton(false);
+      setTitleVisible(false);
+      setContentVisible(false);
+      setButtonVisible(false);
+    }, 2000);
+  });
 
   useEffect(() => {
     const visibilityTimeout = setTimeout(() => {
       setTitleVisible(true);
-      setTimeout(() => {
-        setContentVisible(true);
-      }, 500);
-      setTimeout(() => {
-        setButtonVisible(true);
-      }, 1500);
+      setTimeout(() => setContentVisible(true), 500);
+      setTimeout(() => setButtonVisible(true), 1500);
     }, 1500);
 
-    return () => {
-      clearTimeout(visibilityTimeout);
-    };
+    return () => clearTimeout(visibilityTimeout);
   }, [currentSection]);
 
   return (
     <section className="relative isolate flex min-h-screen items-center justify-center bg-[#bd9479]">
-      {/* Previous Image (fades out) */}
       {prevImage && (
         <img
           key={prevImage}
           alt=""
           src={prevImage}
-          className={`fade-out absolute inset-0 -z-20 h-full w-full object-cover transition-opacity duration-1000`}
+          className="fade-out absolute inset-0 -z-20 h-full w-full object-cover transition-opacity duration-1000"
         />
       )}
 
-      {/* Current Image (fades in) */}
       <img
-        key={sections[currentSection].backgroundImage}
+        key={currentItem.backgroundImage}
         alt=""
-        src={sections[currentSection].backgroundImage}
+        src={currentItem.backgroundImage}
         className="fade-in absolute inset-0 -z-30 h-full w-full object-cover transition-opacity duration-1000"
       />
 
-      {/* Background Overlay */}
-      <div className="absolute inset-0 -z-10 bg-black opacity-25"></div>
+      <div className="absolute inset-0 -z-10 bg-black opacity-25" />
 
-      {/* Slogan Overlay */}
       <IgniteLifeSlogan />
 
-      {/* Main Content */}
       <div className="container-content-sm">
         <div
           key={currentSection}
@@ -105,7 +89,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
               titleVisible ? "slide-in" : "opacity-0"
             } ${fadeOutTitle ? "fade-out" : ""}`}
           >
-            {sections[currentSection].title}
+            {currentItem.title}
           </h1>
 
           <p
@@ -115,7 +99,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
               fadeOutContent ? "fade-out" : ""
             }`}
           >
-            {sections[currentSection].content}
+            {currentItem.content}
           </p>
 
           <div
@@ -126,8 +110,8 @@ export default function HeroSection({ sections }: HeroSectionProps) {
             }`}
           >
             <HeroButton
-              name={"Book Here "}
-              href={"https://ignite-life-bowen-therapy.square.site/"}
+              name="Book Here"
+              href="https://ignite-life-bowen-therapy.square.site/"
             />
           </div>
         </div>

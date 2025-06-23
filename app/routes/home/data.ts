@@ -56,7 +56,7 @@ export const faqs: AccordionItem[] = [
   },
 ];
 
-export const heroSections: HeroSectionItem[] = [
+export const heroSections: [HeroSectionItem, ...HeroSectionItem[]] = [
   {
     title: "Welcome",
     content: "Your Pathway to Harmonious Healing in Lennox Head and Byron Bay",
@@ -94,7 +94,7 @@ export const treatments: Treatment[] = [
   },
 ];
 
-export const carousel: CarouselItem[] = [
+export const carousel: [CarouselItem, ...CarouselItem[]] = [
   {
     src: "/images/testimonials/Evonne.png",
     alt: "Evonne’s Bowen Therapy review – chronic knee pain relief and restored mobility after surgery, now pain-free in Lennox Head.",
