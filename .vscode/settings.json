@@ -19,8 +19,5 @@
     "className={`([^`}]+)`",
     "class=\"([^\"]*)\""
   ],
-  "cSpell.words": [
-    "appspecific",
-    "Fibromyalgia"
-  ]
+  "cSpell.words": ["appspecific", "Fibromyalgia"]
 }
