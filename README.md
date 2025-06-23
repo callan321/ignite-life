@@ -10,24 +10,24 @@ The frontend repository for Ignite Life Bowen Therapy
 - TailwindCSS
 - Vite
 - ESLint
-- Prettier (with Tailwind plugin)
+- Prettier
 
 ## Recommendations
 
 ### VS Code
 
-.vscode/ folder is included to set up Visual Studio Code with:
+This project includes a `.vscode/` folder to improve the developer experience in Visual Studio Code.
 
-- Format on save (Prettier)
-- ESLint auto-fix
-- Tailwind class sorting
-- Recommended extensions
+#### Core Features
 
-VS Code will prompt to apply these settings and install extensions
-automatically.
+- Prettier + ESLint on save: Auto-format and auto-fix files when saving.
+- No need to manually run `npm run lint` or `npm run format` — it's handled automatically in the editor.
 
-If you use another editor or want to use your own settings: Just delete the
-.vscode/ folder.
+#### Recommended Extensions (optional)
+
+When you open the project in VS Code, it will prompt you to install a few recommended extensions that improve the development experience — including Tailwind CSS IntelliSense, class sorting, markdown preview/linting, auto-closing/renaming tags, and spell checking.
+
+If you're using a different editor or prefer your own setup, you can safely remove or ignore the `.vscode/` folder. Just make sure to manually run `npm run lint` and `npm run format` before committing code.
 
 ### Installation
 
