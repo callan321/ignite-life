@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroButton from "~/components/hero-button";
 import IgniteLifeSlogan from "~/components/ignite-life-slogan";
-import { useAutoAdvance } from "~/hooks/useAutoAdvance";
+import { useAutoAdvance } from "~/hooks/use-auto-advance";
 
 export type HeroSectionItem = {
   title: string;

@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
-import { useAutoAdvance } from "~/hooks/useAutoAdvance";
+import { useAutoAdvance } from "~/hooks/use-auto-advance";
 
 export type CarouselItem = {
   src: string;

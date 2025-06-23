@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/filename-case */
 import { useEffect, useRef } from "react";
 
 export function useAutoAdvance(
