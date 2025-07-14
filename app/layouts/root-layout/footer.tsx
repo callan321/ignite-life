@@ -71,7 +71,10 @@ export default function MainFooter() {
           <div className="grid grid-cols-1 pt-12 md:grid-cols-2 xl:pt-0">
             <div>
               <dl className="mt-10 space-y-4 text-base/7 text-gray-800">
-                <div className="flex gap-x-4">
+                <a
+                  className="flex gap-x-4"
+                  href={address.href}
+                >
                   <dt className="flex-none">
                     <span className="sr-only">Address</span>
                     <MapPinIcon
@@ -85,8 +88,11 @@ export default function MainFooter() {
                     {address.state}, {address.postcode}
                     <br />
                   </dd>
-                </div>
-                <div className="flex gap-x-4">
+                </a>
+                <a
+                  className="flex gap-x-4"
+                  href={phone.href}
+                >
                   <dt className="flex-none">
                     <span className="sr-only">Telephone</span>
                     <PhoneIcon
@@ -95,15 +101,13 @@ export default function MainFooter() {
                     />
                   </dt>
                   <dd>
-                    <a
-                      href={phone.href}
-                      className="hover:text-gray-900"
-                    >
-                      {phone.phone}
-                    </a>
+                    <div className="hover:text-gray-900">{phone.phone}</div>
                   </dd>
-                </div>
-                <div className="flex gap-x-4">
+                </a>
+                <a
+                  className="flex gap-x-4"
+                  href={email.href}
+                >
                   <dt className="flex-none">
                     <span className="sr-only">Email</span>
                     <EnvelopeIcon
@@ -112,14 +116,9 @@ export default function MainFooter() {
                     />
                   </dt>
                   <dd>
-                    <a
-                      href={email.href}
-                      className="hover:text-gray-900"
-                    >
-                      {email.email}
-                    </a>
+                    <div className="hover:text-gray-900">{email.email}</div>
                   </dd>
-                </div>
+                </a>
               </dl>
             </div>
             <div className="pt-12 md:pt-0">

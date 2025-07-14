@@ -21,7 +21,7 @@ export const address = {
   city: "Lennox Head",
   state: "New South Whales",
   postcode: "2478",
-  href: "https://www.google.com/maps/dir/?api=1&destination=10+Granite+St,+Lennox+Head,+NSW,+Australia",
+  href: "https://maps.app.goo.gl/pUYpBuk9v6sAEFvy8",
 };
 
 export const email = {
