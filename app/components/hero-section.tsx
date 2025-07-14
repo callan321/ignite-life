@@ -18,7 +18,7 @@ export default function HeroSection({
       }}
     >
       <div
-        className="relative min-h-screen w-full"
+        className="relative flex min-h-screen w-full items-center justify-center"
         style={{
           backgroundImage: `url(${src})`,
           backgroundSize: "cover",
