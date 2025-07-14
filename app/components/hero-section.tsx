@@ -27,7 +27,7 @@ export default function HeroSection({
         }}
       >
         <IgniteLifeSlogan />
-        <div className="relative z-10 flex min-h-screen items-center justify-center">
+        <div className="relative z-10 flex min-h-screen items-center justify-center py-16">
           {children}
         </div>
       </div>

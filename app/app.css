@@ -101,7 +101,7 @@ body {
 }
 
 .container-content-sm {
-  @apply m-8 max-w-2xl p-8 sm:m-16 lg:mx-auto lg:w-full;
+  @apply m-6 max-w-2xl p-6 md:p-8 md:m-8 sm:m-16 lg:mx-auto lg:w-full;
 }
 
 .section {
