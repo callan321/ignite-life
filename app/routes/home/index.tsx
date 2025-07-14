@@ -1,4 +1,3 @@
-// routes/home/index.tsx
 import type { MetaFunction } from "react-router";
 import {
   BowenForAll,

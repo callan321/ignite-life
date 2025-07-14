@@ -15,6 +15,7 @@
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
     "gruntfuggly.todo-tree",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker-australian-english"
   ]
 }
