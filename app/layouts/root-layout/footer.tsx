@@ -67,10 +67,12 @@ export default function MainFooter() {
           </div>
         </div>
         <div>
-          <h2>Contact and Hours</h2>
           <div className="grid grid-cols-1 pt-12 md:grid-cols-2 xl:pt-0">
             <div>
-              <dl className="mt-10 space-y-4 text-base/7 text-gray-800">
+              <h3 className="text-base text-gray-800 underline decoration-gray-300 underline-offset-8">
+                Contact
+              </h3>
+              <dl className="mt-6 space-y-4 text-base/7 text-gray-800">
                 <a
                   className="flex gap-x-4"
                   href={address.href}
@@ -122,16 +124,33 @@ export default function MainFooter() {
               </dl>
             </div>
             <div className="pt-12 md:pt-0">
-              <div className="inline-block">
+              <div className="w-full">
+                <h3 className="text-base text-gray-800 underline decoration-gray-300 underline-offset-8">
+                  Opening Hours
+                </h3>
                 <ul
                   role="list"
-                  className="mt-8 space-y-2 text-left"
+                  className="mt-4 space-y-1 text-left"
                 >
                   {schedule.map((item) => (
-                    <li key={item.day}>
-                      <span className="text-sm/6 text-gray-800">
-                        {item.day}: {item.hours}
-                      </span>
+                    <li
+                      key={item.day}
+                      className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-2 text-sm text-gray-800"
+                    >
+                      <span>{item.day}</span>
+                      {item.open && item.close ? (
+                        <>
+                          <span className="min-w-[4rem] text-right tabular-nums">
+                            {item.open}
+                          </span>
+                          <span className="text-center">–</span>
+                          <span className="min-w-[4rem] text-right tabular-nums">
+                            {item.close}
+                          </span>
+                        </>
+                      ) : (
+                        <span className="col-span-3 text-right">Closed</span>
+                      )}
                     </li>
                   ))}
                 </ul>

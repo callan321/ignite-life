@@ -1,13 +1,5 @@
 # TODO
 
-## Responsive design
-
-- [ ]  text padding at the top of the home
-- [ ]  header
-- [ ]  footer
-- [ ]  Fix the home hero section on mobile
-- [ ]  fix mobile menu header
-
 ## after responsive
 
 - [ ]  fix the placement of the slogan

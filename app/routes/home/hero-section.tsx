@@ -85,7 +85,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
           className="text-shadow -mt-8 space-y-6 text-center md:space-y-8"
         >
           <h1
-            className={`parisienne text-shadow text-4xl tracking-tight text-white sm:text-6xl ${
+            className={`parisienne text-shadow text-4xl tracking-tight text-white sm:text-5xl md:text-6xl ${
               titleVisible ? "slide-in" : "opacity-0"
             } ${fadeOutTitle ? "fade-out" : ""}`}
           >
@@ -95,7 +95,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
           <p
             className={`text-3xl ${
               contentVisible ? "slide-in" : "opacity-0"
-            } text-shadow leading-8 text-gray-100 ${
+            } text-shadow text-sm text-gray-100 md:text-lg lg:leading-8 xl:text-2xl ${
               fadeOutContent ? "fade-out" : ""
             }`}
           >

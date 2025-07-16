@@ -1,16 +1,17 @@
-type ScheduleItem = {
+export interface ScheduleItem {
   day: string;
-  hours: string;
-};
+  open: string | null;
+  close: string | null;
+}
 
 export const schedule: ScheduleItem[] = [
-  { day: "Monday", hours: "9.30 am - 3.00 pm" },
-  { day: "Tuesday", hours: "9.30 am - 3.00 pm" },
-  { day: "Wednesday", hours: "9.30 am - 3.00 pm" },
-  { day: "Thursday", hours: "9.30 am - 3.00 pm" },
-  { day: "Friday", hours: "9.30 am - 3.00 pm" },
-  { day: "Saturday", hours: "8.00 am - 12.00 pm" },
-  { day: "Sunday", hours: "Closed" },
+  { day: "Monday", open: "9.30 am", close: "3.00 pm" },
+  { day: "Tuesday", open: "9.30 am", close: "3.00 pm" },
+  { day: "Wednesday", open: "9.30 am", close: "3.00 pm" },
+  { day: "Thursday", open: "9.30 am", close: "3.00 pm" },
+  { day: "Friday", open: "9.30 am", close: "3.00 pm" },
+  { day: "Saturday", open: "8.00 am", close: "12.00 pm" },
+  { day: "Sunday", open: null, close: null },
 ];
 
 export const copyright =

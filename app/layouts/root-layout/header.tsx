@@ -53,7 +53,7 @@ export default function MainHeader() {
       >
         {/* Added flex, items-center, and justify-between here */}
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8">
-          <nav className="hidden sm:ml-6 sm:flex sm:gap-8">
+          <nav className="ml-6 hidden sm:gap-6 md:flex lg:gap-8">
             {navLinks.map((tab: { name: string; href: string }) => (
               <DesktopTab
                 key={tab.href}
@@ -64,7 +64,7 @@ export default function MainHeader() {
           </nav>
           <div className="mr-6 hidden sm:flex lg:mr-12">
             <span
-              className={`great-vibes text-gold text-shadow text-4xl leading-tight font-medium text-gray-100 ${isSolid ? "" : "hidden"} `}
+              className={`great-vibes text-gold text-shadow text-3xl leading-tight font-medium text-gray-100 lg:text-4xl ${isSolid ? "" : "hidden"} `}
             >
               Ignite Life
             </span>
