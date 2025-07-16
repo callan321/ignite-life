@@ -1,0 +1,26 @@
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-ballet: "Ballet", cursive;
+  --font-vibes: "Great Vibes", cursive;
+  --font-parisienne: "Parisienne", cursive;
+}
+
+/* Typography */
+.great-vibes {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.parisienne {
+  font-family: "Parisienne", cursive;
+}
+
+.ballet {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
