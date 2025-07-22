@@ -74,9 +74,7 @@ export default function HeroSection({ sections }: HeroSectionProps) {
         src={currentItem.backgroundImage}
         className="fade-in absolute inset-0 -z-30 h-full w-full object-cover transition-opacity duration-1000"
       />
-
-      <div className="absolute inset-0 -z-10 bg-black opacity-25" />
-
+      <div className="image-black-overlay -z-10" />
       <IgniteLifeSlogan />
 
       <div className="container-content-sm">

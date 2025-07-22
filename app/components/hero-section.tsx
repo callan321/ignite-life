@@ -26,6 +26,7 @@ export default function HeroSection({
           backgroundClip: "content-box",
         }}
       >
+        <div className="image-black-overlay" />
         <IgniteLifeSlogan />
         <div className="relative z-10 flex min-h-screen items-center justify-center py-12 md:py-24">
           {children}
