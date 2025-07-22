@@ -34,5 +34,5 @@
 }
 
 .image-black-overlay {
-  @apply absolute inset-0 bg-gray-950 opacity-10
+  @apply absolute inset-0 bg-gray-950 opacity-15
 }
