@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
     {
       name: "description",
       content:
-        "Heather is a Bowen Therapist based in Lennox Head, serving the Ballina region. Explore her journey from fashion to healing and how she now supports wellness with holistic bodywork.",
+        "Meet Heather, a dedicated Bowen Therapist in Lennox Head serving the Ballina region. Discover her holistic approach to natural healing and wellness through gentle therapeutic bodywork.",
     },
     {
       name: "robots",
@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => {
     {
       property: "og:description",
       content:
-        "Meet Heather, a dedicated Bowen Therapist in Lennox Head near Ballina. Discover her story and how she brings holistic healing through gentle, therapeutic care.",
+        "Meet Heather, a dedicated Bowen Therapist in Lennox Head near Ballina. Discover her story and holistic approach to natural healing through gentle, therapeutic care.",
     },
     {
       property: "og:image",
@@ -61,7 +61,7 @@ export const meta: MetaFunction = () => {
     {
       name: "twitter:description",
       content:
-        "Discover Heather’s journey into Bowen Therapy. Based in Lennox Head and serving Ballina, she offers natural, holistic support for pain and stress relief.",
+        "Meet Heather, a dedicated Bowen Therapist in Lennox Head serving Ballina. Discover her holistic approach to natural healing and wellness support.",
     },
     {
       name: "twitter:image",
