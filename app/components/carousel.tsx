@@ -91,7 +91,7 @@ export default function Carousel({ items }: CarouselProps) {
 
           {/* Left Chevron Button */}
           <button
-            className="absolute top-1/2 -left-4 -translate-y-1/2 rounded-full bg-stone-600/95 p-2 text-white opacity-80 shadow-lg backdrop-blur-sm transition-all duration-200 group-hover:opacity-100 hover:scale-110 hover:bg-stone-700/95 hover:shadow-xl focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:outline-none lg:-left-6 lg:p-3"
+            className="absolute top-1/2 -left-4 -translate-y-1/2 cursor-pointer rounded-full bg-stone-600/95 p-2 text-white opacity-80 shadow-lg backdrop-blur-sm transition-all duration-200 group-hover:opacity-100 hover:scale-110 hover:bg-stone-700/95 hover:shadow-xl focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:outline-none lg:-left-6 lg:p-3"
             onClick={prev}
             disabled={isTransitioning}
           >
@@ -100,7 +100,7 @@ export default function Carousel({ items }: CarouselProps) {
 
           {/* Right Chevron Button */}
           <button
-            className="absolute top-1/2 -right-4 -translate-y-1/2 rounded-full bg-stone-600/95 p-2 text-white opacity-80 shadow-lg backdrop-blur-sm transition-all duration-200 group-hover:opacity-100 hover:scale-110 hover:bg-stone-700/95 hover:shadow-xl focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:outline-none lg:-right-6 lg:p-3"
+            className="absolute top-1/2 -right-4 -translate-y-1/2 cursor-pointer rounded-full bg-stone-600/95 p-2 text-white opacity-80 shadow-lg backdrop-blur-sm transition-all duration-200 group-hover:opacity-100 hover:scale-110 hover:bg-stone-700/95 hover:shadow-xl focus:ring-2 focus:ring-stone-500 focus:ring-offset-2 focus:outline-none lg:-right-6 lg:p-3"
             onClick={next}
             disabled={isTransitioning}
           >
@@ -113,7 +113,7 @@ export default function Carousel({ items }: CarouselProps) {
           {items.map((item, index) => (
             <button
               key={item.src}
-              className={`h-3.5 w-3.5 rounded-full shadow-sm transition-all duration-300 hover:scale-125 focus:ring-2 focus:ring-stone-500 focus:ring-offset-1 focus:outline-none ${
+              className={`h-3.5 w-3.5 cursor-pointer rounded-full shadow-sm transition-all duration-300 hover:scale-125 focus:ring-2 focus:ring-stone-500 focus:ring-offset-1 focus:outline-none ${
                 index === current
                   ? "scale-110 bg-stone-600 opacity-90 shadow-md"
                   : "bg-stone-400 opacity-70 hover:bg-stone-500 hover:opacity-90"
