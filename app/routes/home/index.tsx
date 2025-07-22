@@ -8,7 +8,7 @@ import {
   treatments,
 } from "./data";
 import FAQSection from "./faq-section";
-import HeroSection from "./hero-section";
+import HomeHeroSection from "./home-hero-section";
 import TestimonialsSection from "./testimonials-section";
 import TreatmentsSection from "./treatments-section";
 export const meta: MetaFunction = () => {
@@ -83,7 +83,7 @@ export const meta: MetaFunction = () => {
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <HeroSection sections={heroSections} />
+      <HomeHeroSection sections={heroSections} />
       <TreatmentsSection
         treatments={treatments}
         content={BowenForAll}

@@ -13,7 +13,7 @@ export type HeroSectionProps = {
   sections: [HeroSectionItem, ...HeroSectionItem[]];
 };
 
-export default function HeroSection({ sections }: HeroSectionProps) {
+export default function HomeHeroSection({ sections }: HeroSectionProps) {
   const TIMEOUT = 15000;
   const [currentSection, setCurrentSection] = useState(0);
   const [prevImage, setPrevImage] = useState<string | null>(null);
