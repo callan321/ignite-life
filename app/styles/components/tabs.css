@@ -1,38 +1,3 @@
-.text-heading {
-  @apply font-sans text-base leading-tight text-[#7f6000] md:text-lg;
-}
-
-.text-body {
-  @apply font-sans text-sm leading-relaxed text-gray-800 md:text-base;
-}
-
-.text-shadow {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Layout */
-.container-content {
-  @apply mx-auto w-full max-w-screen-xl p-8 sm:p-16 md:p-24;
-}
-
-.container-content-sm {
-  @apply m-2 max-w-3xl p-2 md:p-4 md:m-4 lg:mx-auto lg:w-full;
-}
-
-.section {
-  @apply flex min-h-full w-full items-center justify-center;
-}
-
-/* Cards */
-.card {
-  @apply rounded border border-gray-200 bg-gray-50 opacity-85 shadow-lg;
-}
-
-/* Buttons */
-.button-shadow {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
 /* Tabs */
 .tab-active {
   color: #d2e3e4;
