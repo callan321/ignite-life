@@ -1,16 +1,21 @@
+:root {
+  --tab-accent-color: #bcd5d8;  /* Soft teal-gray */
+  --tab-inactive-color: #f3f4f6;  /* Tailwind: gray-100 */
+}
+
 /* Tabs */
 .tab-active {
-  color: #d2e3e4;
+  color: var(--tab-accent-color);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .tab-inactive {
-  color: #e5e7eb;
+  color: var(--tab-inactive-color);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .tab-inactive:hover {
-  color: #d2e3e4;
+  color: var(--tab-accent-color);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   transition:
     color 0.5s ease,
@@ -23,28 +28,25 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px;
-  height: 2px;
-  width: 100%;
-  background-color: #d2e3e4;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
+  bottom: -8px; /* Default underline position */
+  height: 2px; /* Set to your desired thickness */
+  width: 0;
+  background-color: var(--tab-accent-color);
+  transition: width 1s ease;
 }
 
 .bottom-normal::after {
-  bottom: -24px;
+  bottom: -24px !important;
 }
 
 .bottom-solid::after {
-  bottom: 0;
+  bottom: 0 !important;
 }
 
 .tab-active::after {
-  transform: scaleX(1);
+  width: 100%;
 }
 
 .tab-inactive:hover::after {
-  transform: scaleX(1);
-  background-color: #d2e3e4;
+  width: 100%;
 }
