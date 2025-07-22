@@ -104,3 +104,34 @@
 .fade-in-top {
   animation: fadeInSlideDown 1.5s ease forwards;
 }
+
+
+@keyframes SlideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideOutRight {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-in-left {
+  animation: SlideInLeft 1s ease forwards;
+}
+
+.slide-out-right {
+  animation: SlideOutRight 1s ease forwards;
+}
