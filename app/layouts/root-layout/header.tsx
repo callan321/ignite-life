@@ -34,6 +34,7 @@ export default function MainHeader() {
   }, []);
 
   useEffect(() => {
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => {
