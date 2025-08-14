@@ -41,6 +41,7 @@ jobs:
       - run: npm run build
 
   promote-to-staging:
+    if: github.event_name == 'push' && github.ref_name == 'dev'
     needs: [backend-tests, client-tests]
     runs-on: ubuntu-latest
     steps:
