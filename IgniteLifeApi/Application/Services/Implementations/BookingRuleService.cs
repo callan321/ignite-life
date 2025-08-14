@@ -124,15 +124,17 @@ namespace IgniteLifeApi.Application.Services.Implementations
             return await ReturnUpdatedRulesAsync(entity.BookingRulesId, "Blocked period deleted.", cancellationToken);
         }
 
-        // ---------- Private Helpers ----------
+        // ---------- Public Helpers ----------
 
-        private async Task<BookingRules?> GetSingletonRulesAsync(CancellationToken cancellationToken = default)
+        public async Task<BookingRules?> GetSingletonRulesAsync(CancellationToken cancellationToken = default)
         {
             return await _dbContext.BookingRules
                 .Include(r => r.OpeningHours)
                 .Include(r => r.BlockedPeriods)
                 .SingleOrDefaultAsync(cancellationToken);
         }
+
+        // --------- private Helpers ----------
 
         private async Task<ServiceResult<BookingRulesDto>> ReturnUpdatedRulesAsync(Guid id, string message, CancellationToken cancellationToken = default, bool created = false)
         {

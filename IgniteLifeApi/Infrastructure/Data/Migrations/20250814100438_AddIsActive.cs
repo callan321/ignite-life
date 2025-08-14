@@ -5,25 +5,25 @@
 namespace IgniteLifeApi.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class test : Migration
+    public partial class AddIsActive : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "IsAdmin",
-                table: "AdminUsers");
+            migrationBuilder.AddColumn<bool>(
+                name: "IsActive",
+                table: "booking_sessions",
+                type: "boolean",
+                nullable: false,
+                defaultValue: false);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<bool>(
-                name: "IsAdmin",
-                table: "AdminUsers",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
+            migrationBuilder.DropColumn(
+                name: "IsActive",
+                table: "booking_sessions");
         }
     }
 }

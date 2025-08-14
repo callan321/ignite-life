@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IgniteLifeApi.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250813122900_AddIdentityWithRoles")]
-    partial class AddIdentityWithRoles
+    [Migration("20250814100438_AddIsActive")]
+    partial class AddIsActive
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,6 +94,87 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingPackage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("CompletedSessions")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<Guid>("ServiceId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("TotalSessions")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("BookingPackages");
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingReservation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<int>("GroupSize")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<Guid?>("PackageId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("PriceAtBooking")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<Guid>("SessionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PackageId");
+
+                    b.HasIndex("SessionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("booking_reservations", (string)null);
                 });
 
             modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingRuleBlockedPeriod", b =>
@@ -211,6 +292,104 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                     b.ToTable("booking_rules", (string)null);
                 });
 
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingSession", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<DateTime>("EndTimeUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("MaxCapacity")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ReservedCount")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("ServiceId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("StartTimeUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamptz");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("booking_sessions", (string)null);
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BowenService", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ImageAltText")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasMaxLength(2048)
+                        .HasColumnType("character varying(2048)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsGroupSession")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsMultiSession")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("MaxGroupSize")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int?>("SessionCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsActive");
+
+                    b.HasIndex("IsGroupSession", "IsMultiSession");
+
+                    b.ToTable("BowenServices", (string)null);
+                });
+
             modelBuilder.Entity("IgniteLifeApi.Domain.Entities.RefreshToken", b =>
                 {
                     b.Property<Guid>("Id")
@@ -227,16 +406,16 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("ReplacedByTokenHash")
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
 
                     b.Property<DateTime?>("RevokedAtUtc")
                         .HasColumnType("timestamptz");
 
                     b.Property<string>("TokenHash")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
 
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("timestamptz");
@@ -386,6 +565,49 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingPackage", b =>
+                {
+                    b.HasOne("IgniteLifeApi.Domain.Entities.BowenService", "Service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IgniteLifeApi.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Service");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingReservation", b =>
+                {
+                    b.HasOne("IgniteLifeApi.Domain.Entities.BookingPackage", "Package")
+                        .WithMany("Reservations")
+                        .HasForeignKey("PackageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("IgniteLifeApi.Domain.Entities.BookingSession", "Session")
+                        .WithMany("Reservations")
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IgniteLifeApi.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Package");
+
+                    b.Navigation("Session");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingRuleBlockedPeriod", b =>
                 {
                     b.HasOne("IgniteLifeApi.Domain.Entities.BookingRules", "BookingRules")
@@ -406,6 +628,17 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("BookingRules");
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingSession", b =>
+                {
+                    b.HasOne("IgniteLifeApi.Domain.Entities.BowenService", "Service")
+                        .WithMany()
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("IgniteLifeApi.Domain.Entities.RefreshToken", b =>
@@ -475,11 +708,21 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
                     b.Navigation("RefreshTokens");
                 });
 
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingPackage", b =>
+                {
+                    b.Navigation("Reservations");
+                });
+
             modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingRules", b =>
                 {
                     b.Navigation("BlockedPeriods");
 
                     b.Navigation("OpeningHours");
+                });
+
+            modelBuilder.Entity("IgniteLifeApi.Domain.Entities.BookingSession", b =>
+                {
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

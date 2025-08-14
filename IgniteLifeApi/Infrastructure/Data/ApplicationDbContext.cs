@@ -18,6 +18,10 @@ namespace IgniteLifeApi.Infrastructure.Data
         public DbSet<BookingRules> BookingRules { get; set; } = null!;
         public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
         public DbSet<BowenService> BowenServices { get; set; } = null!;
+        public DbSet<BookingPackage> BookingPackages { get; set; } = null!;
+        public DbSet<BookingReservation> BookingReservations { get; set; } = null!;
+        public DbSet<BookingSession> BookingSessions { get; set; } = null!;
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
