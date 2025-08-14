@@ -21,7 +21,6 @@ namespace IgniteLifeApi.Application.Services.Implementations
         {
             return await GetAllBowenServicesAsync(cancellationToken);
         }
-
         public async Task<ServiceResult<List<BowenService>>> CreateBowenServiceAsync(CreateBowenServiceDto dto, CancellationToken cancellationToken = default)
         {
             int? SessionCount = dto.IsMultiSession ? dto.SessionCount : null;
@@ -119,6 +118,25 @@ namespace IgniteLifeApi.Application.Services.Implementations
             await _dbContext.SaveChangesAsync(cancellationToken);
             return await GetAllBowenServicesAsync(cancellationToken);
         }
+
+        // public helpers 
+        public async Task<BowenService> GetBowenServiceByIdAsync(
+            Guid id,
+            CancellationToken cancellationToken = default)
+        {
+            if (id == Guid.Empty)
+                throw new ArgumentException("Id must be a non-empty GUID.", nameof(id));
+
+            var service = await _dbContext.BowenServices
+                .AsNoTracking()
+                .SingleOrDefaultAsync(s => s.Id == id, cancellationToken);
+
+            if (service == null)
+                throw new KeyNotFoundException("Bowen service not found.");
+
+            return service;
+        }
+
 
         // ---------- Private Methods ----------
 

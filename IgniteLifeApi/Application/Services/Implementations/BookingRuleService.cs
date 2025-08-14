@@ -126,12 +126,18 @@ namespace IgniteLifeApi.Application.Services.Implementations
 
         // ---------- Public Helpers ----------
 
-        public async Task<BookingRules?> GetSingletonRulesAsync(CancellationToken cancellationToken = default)
+        public async Task<BookingRules> GetSingletonRulesAsync(
+            CancellationToken cancellationToken = default)
         {
-            return await _dbContext.BookingRules
+            var rules = await _dbContext.BookingRules
                 .Include(r => r.OpeningHours)
                 .Include(r => r.BlockedPeriods)
                 .SingleOrDefaultAsync(cancellationToken);
+
+            if (rules == null)
+                throw new InvalidOperationException("Booking rules have not been configured.");
+
+            return rules;
         }
 
         // --------- private Helpers ----------
