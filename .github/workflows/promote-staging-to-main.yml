@@ -1,0 +1,102 @@
+name: Promote staging → main (open PR)
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "Base branch (production)"
+        default: "main"
+        required: true
+        type: string
+      head:
+        description: "Head branch (staging)"
+        default: "staging"
+        required: true
+        type: string
+      title:
+        description: "PR title"
+        default: "Promote staging to main"
+        required: true
+        type: string
+      body:
+        description: "PR body"
+        default: "Manual QA complete on staging. Promote to production."
+        required: true
+        type: string
+      labels:
+        description: "Comma-separated labels (optional, e.g. 'release, staging-promotion')"
+        default: ""
+        required: false
+        type: string
+      draft:
+        description: "Create PR as draft?"
+        default: false
+        required: true
+        type: boolean
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: promote-staging-to-main
+  cancel-in-progress: false
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open or show PR from ${{ inputs.head }} → ${{ inputs.base }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BASE: ${{ inputs.base }}
+          HEAD: ${{ inputs.head }}
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+          LABELS: ${{ inputs.labels }}
+          DRAFT: ${{ inputs.draft }}
+        run: |
+          set -euo pipefail
+
+          if [ "$BASE" = "$HEAD" ]; then
+            echo "Base and head are the same ($BASE). Nothing to promote."
+            exit 1
+          fi
+
+          echo "Checking for existing open PR from $HEAD → $BASE…"
+          PR_URL="$(gh pr list --repo "$REPO" --base "$BASE" --head "$HEAD" --state open --json url --jq '.[0].url // ""')"
+          if [ -n "$PR_URL" ]; then
+            echo "Found existing PR: $PR_URL" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Build label args
+          LABEL_ARGS=()
+          if [ -n "${LABELS:-}" ]; then
+            IFS=',' read -ra arr <<< "$LABELS"
+            for l in "${arr[@]}"; do
+              l_trimmed="$(echo "$l" | xargs)"
+              [ -n "$l_trimmed" ] && LABEL_ARGS+=(--label "$l_trimmed")
+            done
+          fi
+
+          DRAFT_FLAG=""
+          if [ "$DRAFT" = "true" ]; then
+            DRAFT_FLAG="--draft"
+          fi
+
+          echo "Creating PR…"
+          PR_URL="$(gh pr create \
+            --repo "$REPO" \
+            --base "$BASE" \
+            --head "$HEAD" \
+            --title "$TITLE" \
+            --body "$BODY" \
+            $DRAFT_FLAG \
+            "${LABEL_ARGS[@]}" \
+            --json url --jq .url)"
+
+          echo "PR created: $PR_URL" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
