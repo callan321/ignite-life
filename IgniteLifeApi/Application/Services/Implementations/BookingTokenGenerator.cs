@@ -1,4 +1,5 @@
-﻿using IgniteLifeApi.Domain.Entities;
+﻿using IgniteLifeApi.Application.Dtos;
+using IgniteLifeApi.Domain.Entities;
 using IgniteLifeApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,23 +41,6 @@ public class BookingTokenGenerator
     // Types
     // =========================================================
     public record BlockedTimesRange(DateTime StartTimeUtc, DateTime EndTimeUtc);
-
-    public record BookingToken
-    {
-        public Guid ServiceId { get; init; }
-        public DateTime StartTimeUtc { get; init; }
-        public DateTime EndTimeUtc { get; init; }
-
-        private BookingToken(Guid serviceId, DateTime startTimeUtc, DateTime endTimeUtc)
-        {
-            ServiceId = serviceId;
-            StartTimeUtc = startTimeUtc;
-            EndTimeUtc = endTimeUtc;
-        }
-
-        public static BookingToken Create(Guid serviceId, DateTime startTimeUtc, DateTime endTimeUtc) =>
-            new BookingToken(serviceId, startTimeUtc, endTimeUtc);
-    }
 
     // =========================================================
     // Orchestration helpers

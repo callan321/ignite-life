@@ -43,6 +43,8 @@ namespace IgniteLifeApi.Application.Services.Implementations
             var rules = await _BookingRuleService.GetSingletonRulesAsync(cancellationToken);
             var service = await _BowenService.GetBowenServiceByIdAsync(id, cancellationToken);
             var tokens = await _TokenGenerator.GenerateBookingTokensAsync(service, rules, cancellationToken);
+
+            throw new NotImplementedException("This method is not yet implemented. Please check the service implementation for details.");
         }
     }
 }

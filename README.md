@@ -70,3 +70,13 @@ much faster and the recommended way for dev but not exact thing
     ```
 
 ---
+
+###  install tools 
+
+``` bash
+dotnet tool restore
+```
+
+``` bash
+dotnet ignite --help
+``` 

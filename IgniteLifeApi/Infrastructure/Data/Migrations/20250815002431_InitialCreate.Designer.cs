@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IgniteLifeApi.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250814084034_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20250815002431_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -303,6 +303,9 @@ namespace IgniteLifeApi.Infrastructure.Data.Migrations
 
                     b.Property<DateTime>("EndTimeUtc")
                         .HasColumnType("timestamptz");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
 
                     b.Property<int>("MaxCapacity")
                         .HasColumnType("integer");
